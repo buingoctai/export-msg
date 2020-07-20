@@ -1,4 +1,4 @@
-Xây dựng module export message ra html, để có thể xem trực tiếp từ browser. User có thể đóng gói lại và mở coi ở bất kì máy tính nào (có và không có internet)
+Từ data message dạng JSON tạo ra file HTML & CSS & JS để coi được trên browser. User có thể đóng gói lại và mở coi ở bất kì máy tính nào (có và không có internet)
 
 Yêu cầu cơ bản như sau:
 - Input là array message (dùng react devtools trên Zalo Web để lấy data mẫu)
@@ -7,6 +7,9 @@ Yêu cầu cơ bản như sau:
 - Đối với những message có external resource (file, ảnh, sticker,...): dựa vào resource URL để tải resource về lưu local, attach theo folder export
 - Bấm vào message file, hình, link sẽ mở tab mới để hiện resource
 - Sticker động phải work như bình thường
+- Avatar hiện được hình
+- Dùng ngôn ngữ là tiếng Việt
+- Layout tham khảo Telegram
 
 Hỗ trợ những loại message sau:
 - Text
