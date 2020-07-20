@@ -34,6 +34,7 @@ Không cần hỗ trợ (hiện JSON gốc ở dạng collapsible với những 
 ## Làm việc
 - Tạo nhánh mới trên repo này và làm việc ngay trên đó.
 - Commit thường xuyên.
+- Khi làm xong, tạo pull request để supervisor review.
 - Độ rõ ràng và chất lượng mỗi commit cũng được dùng làm tiêu chí đánh giá.
 
 ## Tham khảo
