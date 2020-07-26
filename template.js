@@ -1,20 +1,20 @@
-const { downloadExternalResource } = require("./untils/index");
+const ejs = require("ejs");
+const { downloadExternalResource } = require("./utils/utils");
 
-exports.htmlTemplate = ({ msgType, message }) => {
+exports.htmlTemplate = async ({ msgType, message }) => {
   switch (msgType) {
-    // text type
+    // Text type
     case 1:
-      return `<div class="text">${message}</div>`;
-    // photo type
+      return ejs.renderFile("./templates/msg-1.ejs", { message });
+    // Photo type
     case 2:
       const { normalUrl: url } = message;
       const fileName = url.substring(url.lastIndexOf("/") + 1);
 
       downloadExternalResource({ msgType, url, fileName });
-      return `<a href=${url} target="_blank"><img src="photos/${fileName}" width="300" height="200"></img></a>`;
-
+      return ejs.renderFile("./templates/msg-2.ejs", { url, fileName });
     default:
-      break;
+      return "";
   }
 };
 

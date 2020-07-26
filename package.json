@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/buingoctai/export-msg#readme",
   "dependencies": {
+    "ejs": "^3.1.3",
     "stream": "0.0.2"
   }
 }
