@@ -704,7 +704,7 @@
     "message": {
       "title": "Hải Phạm",
       "description": "",
-      "href": "www.zaloapp.com",
+      "href": "https://www.dienmayxanh.com/kinh-nghiem-hay/huong-dan-cach-cai-dat-zalo-dang-nhap-zalo-tren-ma-1065292",
       "thumb": "http://s120.avatar.talk.zdn.vn/6/9/1/5/4/120/9dba430c5f92b4b74ceb4aff50f88668.jpg",
       "childnumber": 0,
       "action": "recommened.user",
@@ -741,7 +741,7 @@
     "message": {
       "title": "Toan Nguyen",
       "description": "",
-      "href": "www.zaloapp.com",
+      "href": "https://www.dienmayxanh.com/kinh-nghiem-hay/huong-dan-cach-cai-dat-zalo-dang-nhap-zalo-tren-ma-1065292",
       "thumb": "http://s120.avatar.talk.zdn.vn/a/e/1/d/104/120/8ba407cda203f70a46e30a32ddb5cdfb.jpg",
       "childnumber": 0,
       "action": "recommened.user",
@@ -764,118 +764,6 @@
     "topOutImprTimeOut": "0",
     "z_parsedTokens": ["Toan Nguyen", ""],
     "isLastMsg": false
-  },
-  {
-    "actionId": "1653993690634",
-    "msgId": "1983622893065",
-    "zglobalMsgId": "1983622893065",
-    "cliMsgId": "1595229937226",
-    "msgType": 6,
-    "status": 2,
-    "notify": "1",
-    "mentions": null,
-    "quote": null,
-    "message": {
-      "title": "https://vnexpress.net/bac-trung-bo-trai-qua-70-ngay-nang-nong-4131040.html",
-      "description": "Từ tháng 5 đến nay, các tỉnh Nghệ An, Hà Tĩnh, Quảng Bình, Quảng Trị trải qua 60-70 ngày nắng nóng, nhiệt độ cao hơn trung bình nhiều năm 1-1,5 độ C.",
-      "href": "https://vnexpress.net/bac-trung-bo-trai-qua-70-ngay-nang-nong-4131040.html",
-      "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly9pMS12bmV4cHJlc3Mudm5lY2RuLm5ldC8yMDIwLzA3LzE1L25hbmctbm9uZy1zZXR0b3AtMDFfMTU5NDgxNzg2OF8xMjAweDAuanBnP3c9MCZoPTAmcT0xMDAmZHByPTImZml0PWNyb3Amcz0wOUE0OWxCbl9maTFyM0dGbThEZkpB",
-      "childnumber": 0,
-      "action": "recommened.link",
-      "params": "{\"streamUrl\":\"\",\"mediaTitle\":\"Bắc Trung Bộ trải qua 70 ngày nắng nóng - VnExpress \",\"stream_icon\":\"\",\"src\":\"vnexpress.net\",\"artist\":\"\",\"type\":0}",
-      "type": ""
-    },
-    "sendDttm": "1595229937238",
-    "serverTime": "1595229938150",
-    "fromUid": "0",
-    "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
-    "localDttm": 1595229938964,
-    "properties": null,
-    "ttl": 0,
-    "refMessageId": null,
-    "src": 1,
-    "syncFromMobile": false,
-    "topOut": "0",
-    "topOutTimeOut": "0",
-    "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      {
-        "type": 2,
-        "value": {
-          "prefix": "https://",
-          "url": "vnexpress.net/bac-trung-bo-trai-qua-70-ngay-nang-nong-4131040.html"
-        },
-        "pos": 0
-      },
-      ""
-    ],
-    "isLastMsg": false,
-    "reacts": {
-      "idTo": "",
-      "msgType": "chat.reaction",
-      "rClientMsgId": 0,
-      "rMsgId": 1983622893065,
-      "rMsgType": 0,
-      "currentIcon": 3,
-      "reactions": null
-    }
-  },
-  {
-    "actionId": "1653994017053",
-    "msgId": "1983623053701",
-    "zglobalMsgId": "1983623053701",
-    "cliMsgId": "1595229943125",
-    "msgType": 6,
-    "status": 2,
-    "notify": "1",
-    "mentions": null,
-    "quote": null,
-    "message": {
-      "title": "https://vnexpress.net/my-chiem-gan-1-4-ca-tu-vong-do-ncov-toan-cau-4132995.html",
-      "description": "Mỹ hiện ghi nhận hơn 143.000 người chết do nCoV, chiếm gần 1/4 tổng ca tử vong toàn cầu và tiếp tục là vùng dịch lớn nhất thế giới.",
-      "href": "https://vnexpress.net/my-chiem-gan-1-4-ca-tu-vong-do-ncov-toan-cau-4132995.html",
-      "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly9pMS12bmV4cHJlc3Mudm5lY2RuLm5ldC8yMDIwLzA3LzIwLzIwMjAwNzE3MDAwMDAwOTBreW9kb25ld3MwMDB2aS0yMzQ1LTkwNDAtMTU5NTIxNjkyNF8xMjAweDAuanBnP3c9MCZoPTAmcT0xMDAmZHByPTImZml0PWNyb3Amcz1SdW9ZVFFiY3l2WXRxLXdMS0ZueEx3",
-      "childnumber": 0,
-      "action": "recommened.link",
-      "params": "{\"streamUrl\":\"\",\"mediaTitle\":\"Mỹ chiếm gần 1\\/4 ca tử vong do nCoV toàn cầu - VnExpress \",\"stream_icon\":\"\",\"src\":\"vnexpress.net\",\"artist\":\"\",\"type\":0}",
-      "type": ""
-    },
-    "sendDttm": "1595229943138",
-    "serverTime": "1595229944039",
-    "fromUid": "0",
-    "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
-    "localDttm": 1595229944856,
-    "properties": null,
-    "ttl": 0,
-    "refMessageId": null,
-    "src": 1,
-    "syncFromMobile": false,
-    "topOut": "0",
-    "topOutTimeOut": "0",
-    "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      {
-        "type": 2,
-        "value": {
-          "prefix": "https://",
-          "url": "vnexpress.net/my-chiem-gan-1-4-ca-tu-vong-do-ncov-toan-cau-4132995.html"
-        },
-        "pos": 0
-      },
-      ""
-    ],
-    "isLastMsg": false,
-    "reacts": {
-      "idTo": "",
-      "msgType": "chat.reaction",
-      "rClientMsgId": 0,
-      "rMsgId": 1983623053701,
-      "rMsgType": 0,
-      "currentIcon": 3,
-      "reactions": null
-    }
   },
   {
     "actionId": "1653995849072",
@@ -1001,5 +889,19 @@
       "currentIcon": 3,
       "reactions": null
     }
+  },
+  {
+    "message": {
+      "href": "https://zalo-file-dl1.zdn.vn/15625b687cd0908ec9c1/894416021817496429",
+      "title": "file_example_MP3_1.mp3"
+    },
+    "msgType": 19
+  },
+  {
+    "message": {
+      "href": "https://zalo-file-dl1.zdn.vn/15625b687cd0908ec9c1/894416021817496429",
+      "title": "file_example_MP3_2.mp3"
+    },
+    "msgType": 19
   }
 ]

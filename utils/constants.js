@@ -1,7 +1,8 @@
 const ROOT_EXPORT_PATH = "/Study/ExportMsg";
-const INITIAL_HTML =
-  "<!DOCTYPE html><html><head><meta charset='utf-8' /><title>Exported Data</title><meta content='width=device-width, initial-scale=1.0' name='viewport' /><link href='css/style.css' rel='stylesheet' /></head><body>";
-const END_HTML = "</body></html>";
-const INITIAL_CSS = "body { margin: 0; font: 12px/18px }";
+const INITIAL_CSS =
+  ".container { margin: 0; font: 12px/18px; display:flex;flex-direction:column;align-items:center} a {text-decoration: none;}";
+const STICKER_URL =
+  "https://zalo-api.zadn.vn/api/emoticon/sprite?eid=IdValue&size=130";
+const EXTENSION_LIST = ["png", "jpeg", "pdf", "gif"];
 
-module.exports = { ROOT_EXPORT_PATH, INITIAL_HTML, END_HTML, INITIAL_CSS };
+module.exports = { ROOT_EXPORT_PATH, INITIAL_CSS, STICKER_URL, EXTENSION_LIST };

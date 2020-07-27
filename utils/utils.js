@@ -14,11 +14,13 @@ exports.CreateExportDataDir = (rootExportPath) => {
     fs.mkdirSync(rootExportPath + exportDir);
     fs.mkdirSync(rootExportPath + exportDir + "/MessageExport_" + timeDir);
     fullExportPath = rootExportPath + exportDir + "/MessageExport_" + timeDir;
+    fs.mkdirSync(fullExportPath + "/js");
     fs.mkdirSync(fullExportPath + "/css");
     fs.mkdirSync(fullExportPath + "/photos");
     fs.mkdirSync(fullExportPath + "/mp3s");
     fs.mkdirSync(fullExportPath + "/stickers");
     fs.mkdirSync(fullExportPath + "/mp4s");
+    fs.mkdirSync(fullExportPath + "/files");
   }
 };
 
@@ -40,8 +42,46 @@ exports.writeToCss = (cssContent) => {
   writeStream.end();
 };
 
-exports.downloadExternalResource = ({ msgType, url, fileName }) => {
+exports.writeToJs = (jsContent) => {
+  let writeStream = fs.createWriteStream(fullExportPath + "/js/script.js", {
+    flags: "a",
+  });
+
+  writeStream.write(jsContent);
+  writeStream.end();
+};
+
+exports.detectFileName = (url) => {
+  const fileName = url.substring(url.lastIndexOf("/") + 1).toLowerCase();
+  const hasExtension = fileName.includes(".");
+  if (hasExtension) {
+    return fileName;
+  }
+  return `${fileName}.png`;
+};
+
+const ConvertSizeOfFile = (size) => {
+  if (size >= 1024) {
+    const sizeKb = size / 1024;
+    if (sizeKb > 1024) {
+      const r = Math.round((size / 1024 / 1024) * 100) / 100;
+      return `${r} Mb`;
+    } else {
+      const r = Math.round((size / 1024) * 100) / 100;
+      return `${r} kb`;
+    }
+  } else {
+    return `${size} byte`;
+  }
+};
+
+exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
+  const protocol =
+    url.includes("http") && !url.includes("https")
+      ? require("http")
+      : require("https");
   let subDir = "";
+  let size = 0;
 
   switch (msgType) {
     case 2:
@@ -56,19 +96,32 @@ exports.downloadExternalResource = ({ msgType, url, fileName }) => {
     case 18:
       subDir += "/mp4s";
       break;
+    case 19:
+      subDir += "/files";
+      break;
+    case 6:
+      subDir += "/photos";
+      break;
     default:
   }
 
-  https
-    .request(url, function (response) {
-      let data = new Transform();
+  return new Promise((resolve, __) => {
+    protocol
+      .request(url, function (response) {
+        let data = new Transform();
 
-      response.on("data", function (chunk) {
-        data.push(chunk);
-      });
-      response.on("end", function () {
-        fs.writeFileSync(fullExportPath + subDir + `/${fileName}`, data.read());
-      });
-    })
-    .end();
+        response.on("data", function (chunk) {
+          data.push(chunk);
+          size += chunk.length;
+        });
+        response.on("end", function () {
+          fs.writeFileSync(
+            fullExportPath + subDir + `/${fileName}`,
+            data.read()
+          );
+          resolve(ConvertSizeOfFile(size));
+        });
+      })
+      .end();
+  });
 };
