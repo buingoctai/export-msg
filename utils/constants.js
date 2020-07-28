@@ -1,4 +1,6 @@
-const ROOT_EXPORT_PATH = "/Study/ExportMsg";
+const path = require('path');
+// const ROOT_EXPORT_PATH = "/Study/ExportMsg";
+const ROOT_EXPORT_PATH = path.resolve(__dirname);
 const INITIAL_CSS =
   ".container { margin: 0; font: 12px/18px; display:flex;flex-direction:column;align-items:center} a {text-decoration: none;}";
 const STICKER_URL =
@@ -6,3 +8,4 @@ const STICKER_URL =
 const EXTENSION_LIST = ["png", "jpeg", "pdf", "gif"];
 
 module.exports = { ROOT_EXPORT_PATH, INITIAL_CSS, STICKER_URL, EXTENSION_LIST };
+
