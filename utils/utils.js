@@ -1,19 +1,20 @@
-const https = require("https");
 const fs = require("fs");
 const { Transform } = require("stream");
+const { ROOT_EXPORT_PATH, SIZE_UNIT_LIST, MIN_SIZE } = require("./constants");
+exports.createRootExportPath = (path) => {
+  return fs.promises.mkdir(path, { recursive: true });
+}
 
-exports.CreateExportDataDir = (rootExportPath) => {
+exports.createExportDataDir = () => {
   const currentTime = new Date();
   const day = currentTime.getDate();
   const month = currentTime.getMonth();
   const year = currentTime.getFullYear();
   const timeDir = day + "_" + month + "_" + year;
-  const exportDir = "/Zalo Desktop";
+  fullExportPath = ROOT_EXPORT_PATH + "/MessageExport_" + timeDir;
 
-  if (!fs.existsSync(rootExportPath + exportDir)) {
-    fs.mkdirSync(rootExportPath + exportDir);
-    fs.mkdirSync(rootExportPath + exportDir + "/MessageExport_" + timeDir);
-    fullExportPath = rootExportPath + exportDir + "/MessageExport_" + timeDir;
+  if (!fs.existsSync(fullExportPath)) {
+    fs.mkdirSync(fullExportPath);
     fs.mkdirSync(fullExportPath + "/js");
     fs.mkdirSync(fullExportPath + "/css");
     fs.mkdirSync(fullExportPath + "/photos");
@@ -60,20 +61,15 @@ exports.detectFileName = (url) => {
   return `${fileName}.png`;
 };
 
-const ConvertSizeOfFile = (size) => {
-  if (size >= 1024) {
-    const sizeKb = size / 1024;
-    if (sizeKb > 1024) {
-      const r = Math.round((size / 1024 / 1024) * 100) / 100;
-      return `${r} Mb`;
-    } else {
-      const r = Math.round((size / 1024) * 100) / 100;
-      return `${r} kb`;
-    }
-  } else {
-    return `${size} byte`;
+const ConvertSizeOfFile = (size, i) => {
+  const devidedResult = size / MIN_SIZE;
+
+  if (devidedResult < 1) {
+    const roundedSize = Math.round(size * 100) / 100;
+    return `${roundedSize} ${SIZE_UNIT_LIST[i]}`
   }
-};
+  return ConvertSizeOfFile(devidedResult, i + 1)
+}
 
 exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
   const protocol =
@@ -119,7 +115,7 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
             fullExportPath + subDir + `/${fileName}`,
             data.read()
           );
-          resolve(ConvertSizeOfFile(size));
+          resolve(ConvertSizeOfFile(size, 0));
         });
       })
       .end();

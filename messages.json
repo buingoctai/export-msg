@@ -30,7 +30,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["1", ""],
+    "z_parsedTokens": [
+      "1",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -73,7 +76,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["2", ""],
+    "z_parsedTokens": [
+      "2",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -116,7 +122,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["3", ""],
+    "z_parsedTokens": [
+      "3",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -458,7 +467,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 3", ""],
+    "z_parsedTokens": [
+      "test_1KB - 3",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -505,7 +517,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 2", ""],
+    "z_parsedTokens": [
+      "test_1KB - 2",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -552,7 +567,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 4", ""],
+    "z_parsedTokens": [
+      "test_1KB - 4",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -599,7 +617,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 5", ""],
+    "z_parsedTokens": [
+      "test_1KB - 5",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -646,7 +667,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 1", ""],
+    "z_parsedTokens": [
+      "test_1KB - 1",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -725,7 +749,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["Hải Phạm", ""],
+    "z_parsedTokens": [
+      "Hải Phạm",
+      ""
+    ],
     "isLastMsg": false
   },
   {
@@ -762,7 +789,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["Toan Nguyen", ""],
+    "z_parsedTokens": [
+      "Toan Nguyen",
+      ""
+    ],
     "isLastMsg": false
   },
   {
@@ -796,7 +826,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["recall msg", ""],
+    "z_parsedTokens": [
+      "recall msg",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -878,7 +911,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["sample files.zip", ""],
+    "z_parsedTokens": [
+      "sample files.zip",
+      ""
+    ],
     "isLastMsg": true,
     "reacts": {
       "idTo": "",
