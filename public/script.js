@@ -1,7 +1,7 @@
 function onMouseOver(node) {
   let i = 0;
   const id = setInterval(() => {
-    node.style.backgroundPosition = `${(i = i - 120)}px 0px`;
+    node.style.backgroundPosition = `${(i = i - 130)}px 0px`;
   }, 60);
 
   setTimeout(() => {

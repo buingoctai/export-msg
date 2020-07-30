@@ -14,7 +14,9 @@ const messages = require("./messages.json");
 
 // Initial html,css file
 const initialContent = async () => {
-  const htmlString = await ejs.renderFile("./templates/common/initial.ejs");
+  const isChatGroup = messages.filter(msg => msg.fromUid !== '0').length === messages.length;
+  const header = isChatGroup ? "CHAT NHÓM" : messages[0].dName;
+  const htmlString = (await ejs.renderFile("./templates/common/initial.ejs")).replace("WHO", header);
 
   writeToHtml(htmlString);
   writeToCss(INITIAL_CSS);
@@ -23,20 +25,22 @@ const initialContent = async () => {
 // Append html, css file
 const AppendContent = async () => {
   let appendHtml = "";
-  let appendCss = "";
 
   for (let i = 0; i < messages.length; i++) {
-    const { dName: name, localDttm, fromUid } = messages[i];
+    const { dName, localDttm, fromUid } = messages[i];
     const htmlString = await htmlTemplate(messages[i]);
 
     if (isJoinedUserBefore(messages[i - 1], messages[i])) {
-      const wrapInitMsg = await ejs.renderFile("./templates/common/initial-msg-joined.ejs", { time: convertTimeFormat(localDttm) });
+      const wrapInitMsg = await ejs.renderFile("./templates/common/initial-msg-joined.ejs",
+        { time: convertTimeFormat(localDttm) });
       const wrapEndMsg = await ejs.renderFile("./templates/common/end-msg.ejs");
 
       appendHtml += wrapInitMsg + htmlString + wrapEndMsg;
     } else {
-      const { shortenName, color } = determinateAvatar(fromUid, name);
-      const wrapInitMsg = await ejs.renderFile("./templates/common/initial-msg.ejs", { shortenName, name, time: convertTimeFormat(localDttm) });
+      const { shortenName, name, color } = determinateAvatar(fromUid, dName);
+      let wrapInitMsg = (await ejs.renderFile("./templates/common/initial-msg.ejs",
+        { shortenName, name, time: convertTimeFormat(localDttm) }))
+        .replace("colorValue", color);
       const wrapEndMsg = await ejs.renderFile("./templates/common/end-msg.ejs");
 
       appendHtml += wrapInitMsg + htmlString + wrapEndMsg;

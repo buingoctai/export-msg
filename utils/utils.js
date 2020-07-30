@@ -1,6 +1,8 @@
 const fs = require("fs");
 const { Transform } = require("stream");
 const { ROOT_EXPORT_PATH, SIZE_UNIT_LIST, MIN_SIZE, ICON_DOWNLOAD, POPULAR_EXTENSION } = require("./constants");
+const { type } = require("os");
+
 exports.createRootExportPath = (path) => {
   return fs.promises.mkdir(path, { recursive: true });
 };
@@ -91,7 +93,7 @@ exports.determinateThumb = (fileName) => {
 
   if (isPopularExtension) {
     if (extension === "mp3") {
-      extension = "default";
+      extension = "music";
     }
     if (extension === "mp4") {
       extension = "video";
@@ -110,7 +112,10 @@ exports.determinateAvatar = (fromUid, name) => {
   const color = '#' + crypto.createHash('md5').update(fromUid).digest('hex').substr(0, 6);
   const shortenName = name.charAt(0);
 
-  return { shortenName, color };
+  if (fromUid === "0") {
+    return { shortenName: "T", name: "Tôi", color };
+  }
+  return { shortenName, name, color };
 }
 
 exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
@@ -151,7 +156,6 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
     protocol
       .request(url, function (response) {
         let data = new Transform();
-
         response.on("data", function (chunk) {
           data.push(chunk);
           size += chunk.length;
@@ -159,10 +163,11 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
         response.on("end", function () {
           fs.writeFileSync(
             fullExportPath + subDir + `/${fileName}`,
-            data.read()
-          );
+            data.read());
+          resolve(convertSizeOfFile(size, 0))
+
         });
       })
-      .end(resolve(convertSizeOfFile(size, 0)));
+      .end();
   });
 };
