@@ -6,7 +6,9 @@ const INITIAL_CSS = `.container {
     flex-direction:column;
     align-items:center;
   }
-  
+  body{
+    margin:0px;
+  }
   a {
     text-decoration: none;
   } 
@@ -37,7 +39,6 @@ const INITIAL_CSS = `.container {
   .default.joined {
     margin-top: -10px;
   }
-
   .pull_left {
     float: left;
   }
@@ -62,7 +63,6 @@ const INITIAL_CSS = `.container {
     text-transform: uppercase;
     user-select: none;
   }
-
   .default .body {
     margin-left: 60px;
   }
@@ -72,13 +72,11 @@ const INITIAL_CSS = `.container {
   .details {
       color: #70777b;
   }
-
   .default .from_name {
     color: #3892db;
     font-weight: 700;
     padding-bottom: 5px;
   }
-
   .clearfix:after {
     content: " ";
     visibility: hidden;
@@ -86,11 +84,9 @@ const INITIAL_CSS = `.container {
     height: 0;
     clear: both;
   }
-
   .default .media_wrap {
     padding-bottom: 5px;
   }
-  
   img{
     max-width:150px;
     max-height:100px
@@ -109,7 +105,6 @@ const INITIAL_CSS = `.container {
   .arrangedFlex .infor > * {
     padding: 10px 10px 
   }
-
   .arrangedFlex .infor .title{
     font-size: 15px
   }

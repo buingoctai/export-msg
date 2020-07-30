@@ -35,6 +35,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
   }
   // Sticker type - gắn default extension là png, chưa xử lý width cho mỗi loại sticker
   else if (msgType === 4) {
+    const sizeOf = require('image-size');
     const { id } = message;
     const url = STICKER_URL.replace("IdValue", id);
     const fileName = `${id}.png`;
@@ -46,9 +47,12 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     });
 
     const stringHtml = await ejs.renderFile("./templates/msg-4.ejs", { url: urlLocal });
+    const dimensions = sizeOf(fullExportPath + '/stickers/' + fileName);
     return stringHtml
       .replace("fileNameValue", fileName)
-      .replace("pathValue", fullExportPath);
+      .replace("pathValue", fullExportPath)
+      .replace("widthValue", dimensions.width)
+      .replace("heightValue", dimensions.height);
   }
   // Link type - Còn trường hợp thumb không có extension, trường hợp href không hợp lệ
   else if (msgType === 6) {
