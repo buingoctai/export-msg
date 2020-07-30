@@ -60,7 +60,7 @@
     "serverTime": "1595229840934",
     "fromUid": "0",
     "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
+    "dName": "trí",
     "localDttm": 1595229841774,
     "properties": {
       "color": 0,
@@ -104,9 +104,9 @@
     "message": "3",
     "sendDttm": "1595229840935",
     "serverTime": "1595229841737",
-    "fromUid": "0",
+    "fromUid": "4250314975029983612",
     "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
+    "dName": "bách",
     "localDttm": 1595229842558,
     "properties": {
       "color": 0,
@@ -148,14 +148,14 @@
     "mentions": null,
     "quote": null,
     "message": {
-      "id": 37471,
+      "id": 21332,
       "catId": 11351,
       "type": 7,
       "extInfo": null
     },
     "sendDttm": "1595229846733",
     "serverTime": "1595229847649",
-    "fromUid": "0",
+    "fromUid": "4454965591120302419",
     "toUid": "g5979429457875072506",
     "dName": "huỳnh",
     "localDttm": 1595229848455,
@@ -181,7 +181,7 @@
     "mentions": null,
     "quote": null,
     "message": {
-      "id": 28502,
+      "id": 21332,
       "catId": 10790,
       "type": 7,
       "extInfo": null
@@ -260,9 +260,9 @@
     },
     "sendDttm": "1595229860294",
     "serverTime": "1595229861550",
-    "fromUid": "0",
+    "fromUid": "690754074537041942",
     "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
+    "dName": "Tài",
     "localDttm": 1595229862437,
     "properties": null,
     "ttl": 0,
@@ -309,9 +309,9 @@
     },
     "sendDttm": "1595229862234",
     "serverTime": "1595229863437",
-    "fromUid": "0",
+    "fromUid": "7732521466445044687",
     "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
+    "dName": "Hoàng",
     "localDttm": 1595229864280,
     "properties": null,
     "ttl": 0,
@@ -409,7 +409,7 @@
     "serverTime": "1595229870637",
     "fromUid": "0",
     "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
+    "dName": "Toàn",
     "localDttm": 1595229871478,
     "properties": null,
     "ttl": 0,
@@ -693,7 +693,7 @@
     "mentions": null,
     "quote": null,
     "message": {
-      "id": 26599,
+      "id": 21332,
       "catId": 10682,
       "type": 7,
       "extInfo": null
@@ -727,8 +727,8 @@
     "quote": null,
     "message": {
       "title": "Hải Phạm",
-      "description": "",
-      "href": "https://www.dienmayxanh.com/kinh-nghiem-hay/huong-dan-cach-cai-dat-zalo-dang-nhap-zalo-tren-ma-1065292",
+      "description": "aaaaaaaaaaaaaa",
+      "href": "www.zaloapp.com",
       "thumb": "http://s120.avatar.talk.zdn.vn/6/9/1/5/4/120/9dba430c5f92b4b74ceb4aff50f88668.jpg",
       "childnumber": 0,
       "action": "recommened.user",
@@ -756,44 +756,35 @@
     "isLastMsg": false
   },
   {
-    "actionId": "1653993078213",
-    "msgId": "1983622592387",
-    "zglobalMsgId": "1983622592387",
-    "cliMsgId": "1595229926060",
-    "msgType": 6,
-    "status": 2,
-    "notify": "1",
+    "actionId": "1677099455411",
+    "cliMsgId": "1596027604666",
+    "dName": "Vu Huy Hoang",
+    "fromUid": "1596015681780",
+    "isLastMsg": true,
+    "isSelected": false,
+    "localDttm": 1596027603785,
     "mentions": null,
-    "quote": null,
     "message": {
-      "title": "Toan Nguyen",
-      "description": "",
-      "href": "https://www.dienmayxanh.com/kinh-nghiem-hay/huong-dan-cach-cai-dat-zalo-dang-nhap-zalo-tren-ma-1065292",
-      "thumb": "http://s120.avatar.talk.zdn.vn/a/e/1/d/104/120/8ba407cda203f70a46e30a32ddb5cdfb.jpg",
-      "childnumber": 0,
-      "action": "recommened.user",
-      "params": "5423370376620299330",
-      "type": ""
+      "title": "https://vnexpress.net/bon-ca-nhiem-ncov-o-ha-noi-dak-lak-tp-hcm-4138219.html",
+      "description": "Bộ Y tế chiều nay ghi nhận thêm 4 ca nhiễm nCoV, t…t Đăk Lăk, hai TP HCM, đều liên quan đến Đà Nẵng.",
+      "href": "https://vnexpress.net/bon-ca-nhiem-ncov-o-ha-noi-dak-lak-tp-hcm-4138219.html",
+      "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly96bmV3cy1waG90by1mYmNyYXdsZXIuemFkbi52bi93NzIwL1VwbG9hZGVkL21kZl9yZW92ZGwvMjAyMF8wM18zMC9jb3JvbmEzLmpwZw=="
     },
-    "sendDttm": "1595229926063",
-    "serverTime": "1595229926960",
-    "fromUid": "0",
-    "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
-    "localDttm": 1595229927786,
+    "msgId": "1998803686021",
+    "msgType": 6,
+    "notify": "1",
     "properties": null,
-    "ttl": 0,
+    "quote": null,
     "refMessageId": null,
-    "src": 1,
+    "sendDttm": "1596027604676",
+    "serverTime": "1596027605046",
+    "status": 2,
     "syncFromMobile": false,
+    "toUid": "7995831065802844022",
     "topOut": "0",
-    "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      "Toan Nguyen",
-      ""
-    ],
-    "isLastMsg": false
+    "topOutTimeOut": "0",
+    "ttl": 0
   },
   {
     "actionId": "1653995849072",
@@ -931,13 +922,60 @@
       "href": "https://zalo-file-dl1.zdn.vn/15625b687cd0908ec9c1/894416021817496429",
       "title": "file_example_MP3_1.mp3"
     },
-    "msgType": 19
+    "msgType": 19,
+    "dName": "Tài"
   },
   {
     "message": {
       "href": "https://zalo-file-dl1.zdn.vn/15625b687cd0908ec9c1/894416021817496429",
       "title": "file_example_MP3_2.mp3"
     },
-    "msgType": 19
+    "msgType": 19,
+    "dName": "Tài"
+  },
+  {
+    "message": {
+      "action": "recommend.gif",
+      "childnumber": 0,
+      "description": "",
+      "hdUrl": "undefined",
+      "normalUrl": "https://media0.giphy.com/media/cnEZNDJ5TvPZ8lPAvH/giphy.gif?cid=54488042f3f0c90a3409b30b15af0f0e9dbd5e36ed7d1368&rid=giphy.gif",
+      "oriUrl": "https://media0.giphy.com/media/cnEZNDJ5TvPZ8lPAvH/giphy.gif?cid=54488042f3f0c90a3409b30b15af0f0e9dbd5e36ed7d1368&rid=giphy.gif",
+      "params": {
+        "width": 500,
+        "height": 281
+      },
+      "thumbUrl": "https://f6.photo.talk.zdn.vn/3875494963348336926/9e75847f754b8915d05a.jpg",
+      "title": "",
+      "type": ""
+    },
+    "msgId": "1996540569087",
+    "msgType": 7,
+    "dName": "Tài"
+  },
+  {
+    "message": {
+      "href": "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4",
+      "title": "file_example_MP4.mp4"
+    },
+    "msgType": 19,
+    "dName": "Đạt"
+  },
+  {
+    "message": {
+      "href": "https://zalo-file-dl2.zdn.vn/a82733f2594ab514ec5b/2017166646205950260",
+      "title": "New folder.zip"
+    },
+    "msgType": 19,
+    "dName": "Toàn"
+  },
+  {
+    "message": {
+      "href": "https://f1.voice.talk.zdn.vn/9166407012145037584/48a243256db985e7dca8.amr",
+      "title": ""
+    },
+    "msgId": "1996682306543",
+    "msgType": 3,
+    "dName": "Hoàng"
   }
 ]

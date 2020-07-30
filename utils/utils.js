@@ -1,9 +1,9 @@
 const fs = require("fs");
 const { Transform } = require("stream");
-const { ROOT_EXPORT_PATH, SIZE_UNIT_LIST, MIN_SIZE } = require("./constants");
+const { ROOT_EXPORT_PATH, SIZE_UNIT_LIST, MIN_SIZE, ICON_DOWNLOAD, POPULAR_EXTENSION } = require("./constants");
 exports.createRootExportPath = (path) => {
   return fs.promises.mkdir(path, { recursive: true });
-}
+};
 
 exports.createExportDataDir = () => {
   const currentTime = new Date();
@@ -16,10 +16,12 @@ exports.createExportDataDir = () => {
   if (!fs.existsSync(fullExportPath)) {
     fs.mkdirSync(fullExportPath);
     fs.mkdirSync(fullExportPath + "/js");
+    fs.mkdirSync(fullExportPath + "/images");
     fs.mkdirSync(fullExportPath + "/css");
     fs.mkdirSync(fullExportPath + "/photos");
     fs.mkdirSync(fullExportPath + "/mp3s");
     fs.mkdirSync(fullExportPath + "/stickers");
+    fs.mkdirSync(fullExportPath + "/gifs");
     fs.mkdirSync(fullExportPath + "/mp4s");
     fs.mkdirSync(fullExportPath + "/files");
   }
@@ -61,14 +63,54 @@ exports.detectFileName = (url) => {
   return `${fileName}.png`;
 };
 
-const ConvertSizeOfFile = (size, i) => {
+const convertSizeOfFile = (size, i) => {
   const devidedResult = size / MIN_SIZE;
 
   if (devidedResult < 1) {
     const roundedSize = Math.round(size * 100) / 100;
-    return `${roundedSize} ${SIZE_UNIT_LIST[i]}`
+    return `${roundedSize} ${SIZE_UNIT_LIST[i]}`;
   }
-  return ConvertSizeOfFile(devidedResult, i + 1)
+  return convertSizeOfFile(devidedResult, i + 1);
+};
+
+exports.isJoinedUserBefore = (peviousObj, currentObj) => {
+  if (peviousObj && currentObj.fromUid === peviousObj.fromUid) {
+    return true;
+  }
+  return false;
+};
+
+exports.convertTimeFormat = (timeNumber) => {
+  return new Date(timeNumber).toLocaleTimeString();
+}
+
+exports.determinateThumb = (fileName) => {
+  let extension = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
+  const isPopularExtension = POPULAR_EXTENSION.includes(extension);
+  let url = "";
+
+  if (isPopularExtension) {
+    if (extension === "mp3") {
+      extension = "default";
+    }
+    if (extension === "mp4") {
+      extension = "video";
+    }
+    url = ICON_DOWNLOAD.replace("typeValue", extension);
+  } else {
+
+    url = ICON_DOWNLOAD.replace("typeValue", 'default');
+  }
+
+  return { extension, url }
+}
+
+exports.determinateAvatar = (fromUid, name) => {
+  const crypto = require('crypto');
+  const color = '#' + crypto.createHash('md5').update(fromUid).digest('hex').substr(0, 6);
+  const shortenName = name.charAt(0);
+
+  return { shortenName, color };
 }
 
 exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
@@ -89,15 +131,19 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
     case 4:
       subDir += "/stickers";
       break;
+    case 6:
+      subDir += "/images";
+      break;
+    case 7:
+      subDir += "/gifs";
+      break;
     case 18:
       subDir += "/mp4s";
       break;
     case 19:
       subDir += "/files";
       break;
-    case 6:
-      subDir += "/photos";
-      break;
+
     default:
   }
 
@@ -115,9 +161,8 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
             fullExportPath + subDir + `/${fileName}`,
             data.read()
           );
-          resolve(ConvertSizeOfFile(size, 0));
         });
       })
-      .end();
+      .end(resolve(convertSizeOfFile(size, 0)));
   });
 };
