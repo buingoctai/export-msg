@@ -1,11 +1,22 @@
 const ejs = require("ejs");
-const { detectFileName, downloadExternalResource, determinateThumb } = require("./utils/utils");
-const { STICKER_URL, LOCATION_ICON, GOOGLE_MAP } = require("./utils/constants");
+const {
+  detectFileName,
+  downloadExternalResource,
+  determinateThumb,
+  limitText,
+} = require("./utils/utils");
+const {
+  STICKER_DOWNLOAD_URL,
+  LOCATION_ICON,
+  GOOGLE_MAP,
+} = require("./utils/constants");
 
 exports.htmlTemplate = async ({ msgType, msgId, message }) => {
   // Text type
   if (msgType === 1) {
-    return ejs.renderFile("./templates/msg-1.ejs", { message });
+    return ejs.renderFile("./templates/msg-1.ejs", {
+      message: limitText(message),
+    });
   }
   // Photo type
   else if (msgType === 2) {
@@ -16,15 +27,16 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
 
     return ejs.renderFile("./templates/msg-2.ejs", {
       url: urlLocal,
-      fileName,
-      title,
+      fileName: limitText(fileName),
+      title: limitText(title),
       size,
     });
   }
   // Mp3 type
   else if (msgType === 3) {
     const { href: url } = message;
-    const fileName = `${msgId}.mp3`;
+    const fileName = `${msgId}.amr`;
+
     await downloadExternalResource({ msgType, url, fileName });
     const urlLocal = fullExportPath + "/mp3s/" + fileName;
 
@@ -33,42 +45,46 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       fileName,
     });
   }
-  // Sticker type - gắn default extension là png, chưa xử lý width cho mỗi loại sticker
+  // Sticker type
   else if (msgType === 4) {
-    const sizeOf = require('image-size');
+    const sizeOf = require("image-size");
     const { id } = message;
-    const url = STICKER_URL.replace("IdValue", id);
+    const url = STICKER_DOWNLOAD_URL.replace("IdValue", id);
     const fileName = `${id}.png`;
     const urlLocal = fullExportPath + "/stickers/" + fileName;
+
     await downloadExternalResource({
       msgType,
       url,
       fileName,
     });
+    const stringHtml = await ejs.renderFile("./templates/msg-4.ejs", {
+      url: urlLocal,
+    });
+    const dimensions = sizeOf(fullExportPath + "/stickers/" + fileName);
 
-    const stringHtml = await ejs.renderFile("./templates/msg-4.ejs", { url: urlLocal });
-    const dimensions = sizeOf(fullExportPath + '/stickers/' + fileName);
     return stringHtml
       .replace("fileNameValue", fileName)
       .replace("pathValue", fullExportPath)
       .replace("widthValue", dimensions.width)
       .replace("heightValue", dimensions.height);
   }
-  // Link type - Còn trường hợp thumb không có extension, trường hợp href không hợp lệ
+  // Link type
   else if (msgType === 6) {
     const { title = "", description = "", href = "", thumb = "" } = message;
     const fileName = detectFileName(thumb);
+
     await downloadExternalResource({
       msgType,
       url: thumb,
-      fileName: fileName,
+      fileName,
     });
 
     return ejs.renderFile("./templates/msg-6.ejs", {
       fileName,
       url: href,
-      title,
-      description,
+      title: limitText(title),
+      description: limitText(description),
     });
   }
   // Gif
@@ -76,6 +92,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     const { normalUrl: url } = message;
     const fileName = `${msgId}.gif`;
     const urlLocal = fullExportPath + "/gifs/" + fileName;
+
     await downloadExternalResource({
       msgType,
       url,
@@ -92,6 +109,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     const { desc, lat, lo } = message;
     const iconName = "location.png";
     const urlGgMap = GOOGLE_MAP.replace("latValue", lat).replace("loValue", lo);
+
     await downloadExternalResource({
       msgType: 6,
       url: LOCATION_ICON,
@@ -101,16 +119,17 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     return ejs.renderFile("./templates/msg-17.ejs", {
       fileName: iconName,
       url: urlGgMap,
-      desc,
+      desc: limitText(desc),
       lat,
       lo,
     });
   }
-  // File type - Còn trường hợp thumb có tồn tại hay không, chưa phân thành thư mục riêng cho các loại file(mp3,mp4, còn lại)
+  // File type
   else if (msgType === 19) {
     const { title = "", href = "", thumb = "" } = message;
     let fileName = "";
     const urlLocal = fullExportPath + "/files/" + title;
+
     const size = await downloadExternalResource({
       msgType,
       url: href,
@@ -131,9 +150,9 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
 
     return ejs.renderFile("./templates/msg-19.ejs", {
       url: urlLocal,
-      title,
+      title: limitText(title),
       size,
-      fileName
+      fileName,
     });
   }
   // Default

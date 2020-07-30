@@ -1,4 +1,4 @@
-const ROOT_EXPORT_PATH = "/Study/ExportMsg/Zalo Desktop"; // Edit here
+const ROOT_EXPORT_PATH = "/Study_test/Zalo_Desktop"; // Edit here
 const INITIAL_CSS = `.container { 
     margin: 0; 
     font: 12px/18px; 
@@ -19,11 +19,11 @@ const INITIAL_CSS = `.container {
     z-index:10;
     background-color: #ffff;
     display: flex;
-    justify-content: center;
+    padding-left: 50px;
   }
   .page_body{
     padding-top: 64px;
-    width: 480px;
+    width: 520px;
     margin: 0 auto;
   }
   .history{
@@ -46,7 +46,7 @@ const INITIAL_CSS = `.container {
     padding-top: 10px;
   }
   .initials {
-    font-size: 30px;
+    font-size: 20px;
   }
   .userpic4 {
     background-color: #4f9cd9;
@@ -109,26 +109,34 @@ const INITIAL_CSS = `.container {
     font-size: 15px
   }
   `;
-const STICKER_URL =
+const STICKER_DOWNLOAD_URL =
   "https://zalo-api.zadn.vn/api/emoticon/sprite?eid=IdValue&size=130";
 const EXTENSION_LIST = ["png", "jpeg", "pdf", "gif"];
 const SIZE_UNIT_LIST = ["Bytes", "Kb", "Mb", "Gb"];
-const MIN_SIZE = 1024;
+const SIZE_UNIT_CONVERT = 1024;
 const LOCATION_ICON =
   "https://image.freepik.com/free-vector/location_53876-25530.jpg";
 const GOOGLE_MAP = "https://maps.google.com/?q=latValue,loValue";
 const ICON_DOWNLOAD = "https://zalo-chat-static.zadn.vn/v1/icon-typeValue.svg";
-const POPULAR_EXTENSION = ['pdf', 'word', 'txt', 'excel', 'mp3', 'mp4'];
+const EXTENSION_POPULAR = ["pdf", "word", "txt", "excel", "mp3", "mp4"];
+const DEFAULT_NAME = "Tôi";
+const SHORTEN_NAME = DEFAULT_NAME.charAt(DEFAULT_NAME);
+const MAX_TEXT_LENGTH = 70;
+const TITLE_GROUP_CHAT = "Chat nhóm";
 
 module.exports = {
   ROOT_EXPORT_PATH,
   INITIAL_CSS,
-  STICKER_URL,
+  STICKER_DOWNLOAD_URL,
   EXTENSION_LIST,
   SIZE_UNIT_LIST,
-  MIN_SIZE,
+  SIZE_UNIT_CONVERT,
   LOCATION_ICON,
   GOOGLE_MAP,
   ICON_DOWNLOAD,
-  POPULAR_EXTENSION
+  EXTENSION_POPULAR,
+  DEFAULT_NAME,
+  SHORTEN_NAME,
+  MAX_TEXT_LENGTH,
+  TITLE_GROUP_CHAT,
 };

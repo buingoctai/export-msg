@@ -30,10 +30,7 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      "1",
-      ""
-    ],
+    "z_parsedTokens": ["1", ""],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -76,10 +73,7 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      "2",
-      ""
-    ],
+    "z_parsedTokens": ["2", ""],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -122,10 +116,7 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      "3",
-      ""
-    ],
+    "z_parsedTokens": ["3", ""],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -467,10 +458,7 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": [
-      "test_1KB - 3",
-      ""
-    ],
+    "z_parsedTokens": ["test_1KB - 3", ""],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -517,10 +505,7 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": [
-      "test_1KB - 2",
-      ""
-    ],
+    "z_parsedTokens": ["test_1KB - 2", ""],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -567,10 +552,7 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": [
-      "test_1KB - 4",
-      ""
-    ],
+    "z_parsedTokens": ["test_1KB - 4", ""],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -617,10 +599,7 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": [
-      "test_1KB - 5",
-      ""
-    ],
+    "z_parsedTokens": ["test_1KB - 5", ""],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -667,10 +646,7 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": [
-      "test_1KB - 1",
-      ""
-    ],
+    "z_parsedTokens": ["test_1KB - 1", ""],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -749,10 +725,7 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      "Hải Phạm",
-      ""
-    ],
+    "z_parsedTokens": ["Hải Phạm", ""],
     "isLastMsg": false
   },
   {
@@ -789,10 +762,7 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      "Toan Nguyen",
-      ""
-    ],
+    "z_parsedTokens": ["Toan Nguyen", ""],
     "isLastMsg": false
   },
   {
@@ -826,10 +796,7 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      "recall msg",
-      ""
-    ],
+    "z_parsedTokens": ["recall msg", ""],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -911,10 +878,7 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": [
-      "sample files.zip",
-      ""
-    ],
+    "z_parsedTokens": ["sample files.zip", ""],
     "isLastMsg": true,
     "reacts": {
       "idTo": "",
@@ -963,15 +927,7 @@
       "type": ""
     }
   },
-  {
-    "message": {
-      "href": "https://zalo-file-dl1.zdn.vn/371a9e5b73e39fbdc6f2/4621330393413764304",
-      "title": "200MB.zip"
-    },
-    "msgType": 19,
-    "dName": "Tài",
-    "fromUid": "3333222223232323"
-  },
+
   {
     "message": {
       "href": "https://zalo-file-doc5.zdn.vn/d550ee4d02f5eeabb7e4/1502577436344094971",
@@ -980,5 +936,23 @@
     "msgType": 19,
     "dName": "abac xyz",
     "fromUid": "3333222223232323"
+  },
+  {
+    "msgType": 6,
+    "dName": "Thi",
+    "fromUid": "878675222223232323",
+    "message": {
+      "action": "recommened.link",
+      "description": "Diễn biến Covid-19 ở Đà Nẵng: Đuổi theo nhóm người bỏ chạy lúc rạng sáng, Công an quận Tân Phú tạm giữ 11 công dân Trung Quốc nghi nhập cảnh trái phép.",
+      "childnumber": 0,
+      "href": "https://zingnews.vn/tphcm-phat-hien-them-11-nguoi-trung-quoc-nghi-nhap-canh-trai-phep-post1113305.html",
+      "params": {
+        "streamUrl": "",
+        "mediaTitle": "TA CÒN YÊU NHAU - OFFICIAL MV STORY | ĐỨC PHÚC"
+      },
+      "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly96bmV3cy1waG90by1mYmNyYXdsZXIuemFkbi52bi93NzIwL1VwbG9hZGVkL29maF9jZ216c3Rnay8yMDIwXzA3XzMwLzExNjcxNjIwN182NDk0OTk4MTIzMjA4MTJfMzQwMjAzNzM4NzY0ODYyNzc2MV9uX21td2kuanBn",
+      "type": "",
+      "title": "https://zingnews.vn/tphcm-phat-hien-them-11-nguoi-trung-quoc-nghi-nhap-canh-trai-phep-post1113305.html"
+    }
   }
 ]
