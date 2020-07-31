@@ -31,7 +31,7 @@ const INITIAL_CSS = `.container {
     z-index:10;
     background-color: #ffff;
     display: flex;
-    padding-left: 50px;
+    padding-left: 200px;
   }
   .page_body{
     padding-top: 64px;
@@ -119,6 +119,9 @@ const INITIAL_CSS = `.container {
   }
   .arrangedFlex .infor .title{
     font-size: 15px
+  }
+  .description{
+    font-size: 12px
   }
   `;
 const STICKER_DOWNLOAD_URL =
