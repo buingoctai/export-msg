@@ -82,7 +82,8 @@ const INITIAL_CSS = `.container {
     float: right;
   }
   .details {
-      color: #70777b;
+    color: #70777b;
+    font-size: 12px;
   }
   .default .from_name {
     color: #3892db;
