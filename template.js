@@ -28,9 +28,10 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
   // Photo type
   else if (msgType === 2) {
     const { normalUrl: url = "", title = "" } = message;
-    const fileName = detectFileName(url);
-    const size = await downloadExternalResource({ msgType, url, fileName });
-    const urlLocal = fullExportPath + "/" + PHOTO_DIR + "/" + fileName;
+    let fileName = detectFileName(url);
+    const { updatedFileName, size } = await downloadExternalResource({ msgType, url, fileName });
+    fileName = updatedFileName;
+    const urlLocal = PHOTO_DIR + "/" + fileName;
 
     return ejs.renderFile("./templates/msg-2.ejs", {
       url: urlLocal,
@@ -43,10 +44,11 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
   // Mp3 type
   else if (msgType === 3) {
     const { href: url } = message;
-    const fileName = `${msgId}.amr`;
+    let fileName = `${msgId}.amr`;
 
-    await downloadExternalResource({ msgType, url, fileName });
-    const urlLocal = fullExportPath + "/" + MP3_DIR + "/" + fileName;
+    const { updatedFileName } = await downloadExternalResource({ msgType, url, fileName });
+    fileName = updatedFileName;
+    const urlLocal = MP3_DIR + "/" + fileName;
 
     return ejs.renderFile("./templates/msg-3.ejs", {
       url: urlLocal,
@@ -59,18 +61,20 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     const sizeOf = require("image-size");
     const { id } = message;
     const url = STICKER_DOWNLOAD_URL.replace("IdValue", id);
-    const fileName = `${id}.png`;
-    const urlLocal = fullExportPath + "/" + STICKER_DIR + "/" + fileName;
+    let fileName = `${msgId}.png`;
 
-    await downloadExternalResource({
+    const { updatedFileName } = await downloadExternalResource({
       msgType,
       url,
       fileName,
     });
+    fileName = updatedFileName;
+    const urlLocal = STICKER_DIR + "/" + fileName;
+
     const stringHtml = await ejs.renderFile("./templates/msg-4.ejs", {
       url: urlLocal,
     });
-    const dimensions = sizeOf(fullExportPath + "/" + STICKER_DIR + "/" + fileName);
+    const dimensions = sizeOf(fullExportPath + "./" + STICKER_DIR + "/" + fileName);
 
     return stringHtml
       .replace("fileNameValue", fileName)
@@ -82,14 +86,15 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
   }
   // Link type
   else if (msgType === 6) {
-    const { title = "", description = "", href = "", thumb = "" } = message;
-    const fileName = detectFileName(thumb);
+    const { title = "", description = "", href = "", thumb = "", } = message;
+    let fileName = `${msgId}.png`;
 
-    await downloadExternalResource({
+    const { updatedFileName } = await downloadExternalResource({
       msgType,
       url: thumb,
       fileName,
     });
+    fileName = updatedFileName;
 
     return ejs.renderFile("./templates/msg-6.ejs", {
       fileName,
@@ -102,14 +107,16 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
   // Gif
   else if (msgType === 7) {
     const { normalUrl: url } = message;
-    const fileName = `${msgId}.gif`;
-    const urlLocal = fullExportPath + "/" + GIF_DIR + "/" + fileName;
+    let fileName = `${msgId}.gif`;
 
-    await downloadExternalResource({
+    const { updatedFileName } = await downloadExternalResource({
       msgType,
       url,
       fileName,
     });
+    fileName = updatedFileName;
+    const urlLocal = GIF_DIR + "/" + fileName;
+
 
     return ejs.renderFile("./templates/msg-7.ejs", {
       fileName,
@@ -141,14 +148,17 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
   // File type
   else if (msgType === 19) {
     const { title = "", href = "", thumb = "" } = message;
-    let fileName = "";
-    const urlLocal = fullExportPath + "/" + FILE_DIR + "/" + title;
+    let fileNameFile = title;
+    let fileNameImg = "";
 
-    const size = await downloadExternalResource({
+
+    const { updatedFileName, size } = await downloadExternalResource({
       msgType,
       url: href,
-      fileName: title,
+      fileName: fileNameFile,
     });
+    fileNameFile = updatedFileName;
+
     if (thumb) {
       fileName = detectFileName(thumb);
       downloadExternalResource({
@@ -158,15 +168,18 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       });
     } else {
       const { extension, url } = determinateThumb(title);
-      fileName = `${extension}.svg`;
-      await downloadExternalResource({ msgType: 6, url, fileName });
+      fileNameImg = `${extension}.svg`;
+      const { updatedFileName } = await downloadExternalResource({ msgType: 6, url, fileName: fileNameImg });
+      fileNameImg = updatedFileName;
     }
+    const urlLocal = FILE_DIR + "/" + fileNameFile;
+
 
     return ejs.renderFile("./templates/msg-19.ejs", {
       url: urlLocal,
       title: limitText(title),
       size,
-      fileName,
+      fileName: fileNameImg,
       dir: IMAGE_DIR
     });
   }

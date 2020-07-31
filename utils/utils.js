@@ -1,5 +1,7 @@
 const fs = require("fs");
 const { Transform } = require("stream");
+const crypto = require("crypto");
+
 const {
   ROOT_FOLDER_NAME,
   SIZE_UNIT_LIST,
@@ -15,11 +17,13 @@ const {
   STICKER_DIR,
   GIF_DIR,
   MP4_DIR,
-  FILE_DIR
+  FILE_DIR,
+  CSS_DIR,
+  JS_DIR
 } = require("./constants");
 
 
-createRootExportPath = (path, index = 0) => {
+createRootExportPath = (path) => {
   const currentTime = new Date();
   const day = currentTime.getDate();
   const month = currentTime.getMonth();
@@ -38,15 +42,15 @@ exports.createExportDataDir = () => {
   fullExportPath = rootExportPath + ROOT_FOLDER_NAME;
 
   fs.mkdirSync(fullExportPath);
-  fs.mkdirSync(fullExportPath + "/js");
-  fs.mkdirSync(fullExportPath + "/images");
-  fs.mkdirSync(fullExportPath + "/css");
-  fs.mkdirSync(fullExportPath + "/photos");
-  fs.mkdirSync(fullExportPath + "/mp3s");
-  fs.mkdirSync(fullExportPath + "/stickers");
-  fs.mkdirSync(fullExportPath + "/gifs");
-  fs.mkdirSync(fullExportPath + "/mp4s");
-  fs.mkdirSync(fullExportPath + "/files");
+  fs.mkdirSync(fullExportPath + JS_DIR);
+  fs.mkdirSync(fullExportPath + IMAGE_DIR);
+  fs.mkdirSync(fullExportPath + CSS_DIR);
+  fs.mkdirSync(fullExportPath + PHOTO_DIR);
+  fs.mkdirSync(fullExportPath + MP3_DIR);
+  fs.mkdirSync(fullExportPath + STICKER_DIR);
+  fs.mkdirSync(fullExportPath + GIF_DIR);
+  fs.mkdirSync(fullExportPath + MP4_DIR);
+  fs.mkdirSync(fullExportPath + FILE_DIR);
 };
 
 exports.writeToFile = (content, subPath) => {
@@ -108,7 +112,6 @@ exports.determinateThumb = (fileName) => {
 };
 
 exports.determinateAvatar = (fromUid, name) => {
-  const crypto = require("crypto");
   const color =
     "#" + crypto.createHash("md5").update(fromUid).digest("hex").substr(0, 6);
   const lastSpaceIndex = name.lastIndexOf(" ");
@@ -137,6 +140,12 @@ const limitText = (text) => {
 };
 exports.limitText = limitText;
 
+const genUniqueKey = (url, path) => {
+  const index = crypto.createHash("md5").update(url + path).digest("hex");
+  return index;
+}
+exports.genUniqueKey = genUniqueKey;
+
 exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
   const protocol =
     url.includes("http") && !url.includes("https")
@@ -147,31 +156,37 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
 
   switch (msgType) {
     case 2:
-      subDir += "/" + PHOTO_DIR;
+      subDir += PHOTO_DIR;
       break;
     case 3:
-      subDir += "/" + MP3_DIR;
+      subDir += MP3_DIR;
       break;
     case 4:
-      subDir += "/" + STICKER_DIR;
+      subDir += STICKER_DIR;
       break;
     case 6:
-      subDir += "/" + IMAGE_DIR;
+      subDir += IMAGE_DIR;
       break;
     case 7:
-      subDir += "/" + GIF_DIR;
+      subDir += GIF_DIR;
       break;
     case 18:
-      subDir += "/" + MP4_DIR;
+      subDir += MP4_DIR;
       break;
     case 19:
-      subDir += "/" + FILE_DIR;
+      subDir += FILE_DIR;
       break;
 
     default:
   }
 
   return new Promise((resolve, __) => {
+    const existResource = downloadedResource[genUniqueKey(url, subDir)];
+    if (existResource) {
+      const { fileName, size } = existResource;
+      return resolve({ updatedFileName: fileName, size: convertSizeOfFile(size, 0) })
+    }
+
     protocol
       .request(url, function (response) {
         let data = new Transform();
@@ -180,11 +195,13 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
           size += chunk.length;
         });
         response.on("end", function () {
+          const index = genUniqueKey(url, subDir);
+          downloadedResource[index] = { fileName, size }
           fs.writeFileSync(
             fullExportPath + subDir + `/${fileName}`,
             data.read()
           );
-          resolve(convertSizeOfFile(size, 0));
+          resolve({ updatedFileName: fileName, size: convertSizeOfFile(size, 0) });
         });
       })
       .end();
