@@ -1,6 +1,7 @@
 const fs = require("fs");
 const { Transform } = require("stream");
 const {
+  ROOT_FOLDER_NAME,
   SIZE_UNIT_LIST,
   SIZE_UNIT_CONVERT,
   ICON_DOWNLOAD,
@@ -8,6 +9,13 @@ const {
   DEFAULT_NAME,
   SHORTEN_NAME,
   MAX_TEXT_LENGTH,
+  PHOTO_DIR,
+  IMAGE_DIR,
+  MP3_DIR,
+  STICKER_DIR,
+  GIF_DIR,
+  MP4_DIR,
+  FILE_DIR
 } = require("./constants");
 
 
@@ -27,7 +35,7 @@ createRootExportPath = (path, index = 0) => {
 exports.createRootExportPath = createRootExportPath;
 
 exports.createExportDataDir = () => {
-  fullExportPath = rootExportPath + "/MessageExport";
+  fullExportPath = rootExportPath + ROOT_FOLDER_NAME;
 
   fs.mkdirSync(fullExportPath);
   fs.mkdirSync(fullExportPath + "/js");
@@ -41,32 +49,14 @@ exports.createExportDataDir = () => {
   fs.mkdirSync(fullExportPath + "/files");
 };
 
-exports.writeToHtml = (htmlContent) => {
-  let writeStream = fs.createWriteStream(fullExportPath + "/index.html", {
+exports.writeToFile = (content, subPath) => {
+  let writeStream = fs.createWriteStream(fullExportPath + subPath, {
     flags: "a",
   });
 
-  writeStream.write(htmlContent);
+  writeStream.write(content);
   writeStream.end();
-};
-
-exports.writeToCss = (cssContent) => {
-  let writeStream = fs.createWriteStream(fullExportPath + "/css/style.css", {
-    flags: "a",
-  });
-
-  writeStream.write(cssContent);
-  writeStream.end();
-};
-
-exports.writeToJs = (jsContent) => {
-  let writeStream = fs.createWriteStream(fullExportPath + "/js/script.js", {
-    flags: "a",
-  });
-
-  writeStream.write(jsContent);
-  writeStream.end();
-};
+}
 
 exports.detectFileName = (url) => {
   const fileName = url.substring(url.lastIndexOf("/") + 1).toLowerCase();
@@ -157,25 +147,25 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
 
   switch (msgType) {
     case 2:
-      subDir += "/photos";
+      subDir += "/" + PHOTO_DIR;
       break;
     case 3:
-      subDir += "/mp3s";
+      subDir += "/" + MP3_DIR;
       break;
     case 4:
-      subDir += "/stickers";
+      subDir += "/" + STICKER_DIR;
       break;
     case 6:
-      subDir += "/images";
+      subDir += "/" + IMAGE_DIR;
       break;
     case 7:
-      subDir += "/gifs";
+      subDir += "/" + GIF_DIR;
       break;
     case 18:
-      subDir += "/mp4s";
+      subDir += "/" + MP4_DIR;
       break;
     case 19:
-      subDir += "/files";
+      subDir += "/" + FILE_DIR;
       break;
 
     default:

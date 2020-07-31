@@ -1,4 +1,16 @@
 const ROOT_EXPORT_PATH = "/Study_test/Zalo_Desktop"; // Edit here
+const ROOT_FOLDER_NAME = "/MessageExport/";
+const JS_DIR = "js";
+const IMAGE_DIR = "images";
+const CSS_DIR = "css";
+const PHOTO_DIR = "photos";
+const MP3_DIR = "mp3s";
+const STICKER_DIR = "stickers";
+const GIF_DIR = "gifs";
+const MP4_DIR = "mp4s";
+const FILE_DIR = "files";
+
+
 const INITIAL_CSS = `.container { 
     margin: 0; 
     font: 12px/18px; 
@@ -126,8 +138,18 @@ const TITLE_GROUP_CHAT = "Chat nhóm";
 
 module.exports = {
   ROOT_EXPORT_PATH,
+  ROOT_FOLDER_NAME,
+  JS_DIR,
+  IMAGE_DIR,
+  CSS_DIR,
   INITIAL_CSS,
   STICKER_DOWNLOAD_URL,
+  PHOTO_DIR,
+  MP3_DIR,
+  STICKER_DIR,
+  GIF_DIR,
+  MP4_DIR,
+  FILE_DIR,
   EXTENSION_LIST,
   SIZE_UNIT_LIST,
   SIZE_UNIT_CONVERT,

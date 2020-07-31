@@ -9,6 +9,13 @@ const {
   STICKER_DOWNLOAD_URL,
   LOCATION_ICON,
   GOOGLE_MAP,
+  PHOTO_DIR,
+  IMAGE_DIR,
+  MP3_DIR,
+  STICKER_DIR,
+  GIF_DIR,
+  MP4_DIR,
+  FILE_DIR,
 } = require("./utils/constants");
 
 exports.htmlTemplate = async ({ msgType, msgId, message }) => {
@@ -23,13 +30,14 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     const { normalUrl: url = "", title = "" } = message;
     const fileName = detectFileName(url);
     const size = await downloadExternalResource({ msgType, url, fileName });
-    const urlLocal = fullExportPath + "/photos/" + fileName;
+    const urlLocal = fullExportPath + "/" + PHOTO_DIR + "/" + fileName;
 
     return ejs.renderFile("./templates/msg-2.ejs", {
       url: urlLocal,
-      fileName: limitText(fileName),
+      fileName,
       title: limitText(title),
       size,
+      dir: PHOTO_DIR
     });
   }
   // Mp3 type
@@ -38,11 +46,12 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     const fileName = `${msgId}.amr`;
 
     await downloadExternalResource({ msgType, url, fileName });
-    const urlLocal = fullExportPath + "/mp3s/" + fileName;
+    const urlLocal = fullExportPath + "/" + MP3_DIR + "/" + fileName;
 
     return ejs.renderFile("./templates/msg-3.ejs", {
       url: urlLocal,
       fileName,
+      dir: MP3_DIR
     });
   }
   // Sticker type
@@ -51,7 +60,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     const { id } = message;
     const url = STICKER_DOWNLOAD_URL.replace("IdValue", id);
     const fileName = `${id}.png`;
-    const urlLocal = fullExportPath + "/stickers/" + fileName;
+    const urlLocal = fullExportPath + "/" + STICKER_DIR + "/" + fileName;
 
     await downloadExternalResource({
       msgType,
@@ -61,13 +70,15 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     const stringHtml = await ejs.renderFile("./templates/msg-4.ejs", {
       url: urlLocal,
     });
-    const dimensions = sizeOf(fullExportPath + "/stickers/" + fileName);
+    const dimensions = sizeOf(fullExportPath + "/" + STICKER_DIR + "/" + fileName);
 
     return stringHtml
       .replace("fileNameValue", fileName)
       .replace("pathValue", fullExportPath)
       .replace("widthValue", dimensions.width)
-      .replace("heightValue", dimensions.height);
+      .replace("heightValue", dimensions.height)
+      .replace("dirValue", STICKER_DIR);
+
   }
   // Link type
   else if (msgType === 6) {
@@ -85,13 +96,14 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       url: href,
       title: limitText(title),
       description: limitText(description),
+      dir: IMAGE_DIR
     });
   }
   // Gif
   else if (msgType === 7) {
     const { normalUrl: url } = message;
     const fileName = `${msgId}.gif`;
-    const urlLocal = fullExportPath + "/gifs/" + fileName;
+    const urlLocal = fullExportPath + "/" + GIF_DIR + "/" + fileName;
 
     await downloadExternalResource({
       msgType,
@@ -102,6 +114,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     return ejs.renderFile("./templates/msg-7.ejs", {
       fileName,
       url: urlLocal,
+      dir: GIF_DIR
     });
   }
   // // Location type
@@ -122,13 +135,14 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       desc: limitText(desc),
       lat,
       lo,
+      dir: IMAGE_DIR
     });
   }
   // File type
   else if (msgType === 19) {
     const { title = "", href = "", thumb = "" } = message;
     let fileName = "";
-    const urlLocal = fullExportPath + "/files/" + title;
+    const urlLocal = fullExportPath + "/" + FILE_DIR + "/" + title;
 
     const size = await downloadExternalResource({
       msgType,
@@ -153,6 +167,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       title: limitText(title),
       size,
       fileName,
+      dir: IMAGE_DIR
     });
   }
   // Default
@@ -160,15 +175,5 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     return ejs.renderFile("./templates/default.ejs", {
       title: JSON.stringify(message),
     });
-  }
-};
-
-exports.cssTemplate = (msgType) => {
-  switch (1) {
-    case 1:
-      break;
-    case 2:
-      break;
-    default:
   }
 };

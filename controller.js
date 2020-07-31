@@ -1,15 +1,13 @@
 const ejs = require("ejs");
 const {
-  writeToHtml,
-  writeToCss,
-  writeToJs,
+  writeToFile,
   isJoinedUserBefore,
   convertTimeFormat,
   determinateAvatar,
 } = require("./utils/utils");
-const { INITIAL_CSS, TITLE_GROUP_CHAT } = require("./utils/constants");
+const { INITIAL_CSS, TITLE_GROUP_CHAT, CSS_DIR, JS_DIR } = require("./utils/constants");
 const { onMouseOver } = require("./public/script");
-const { htmlTemplate, cssTemplate } = require("./template");
+const { htmlTemplate } = require("./template");
 const messages = require("./messages.json");
 
 // Initial html,css file
@@ -21,9 +19,9 @@ const initialContent = async () => {
     await ejs.renderFile("./templates/common/initial.ejs")
   ).replace("WHO", header);
 
-  writeToHtml(htmlString);
-  writeToCss(INITIAL_CSS);
-  writeToJs(onMouseOver.toString());
+  writeToFile(htmlString, "/index.html");
+  writeToFile(INITIAL_CSS, CSS_DIR + "/style.css");
+  writeToFile(onMouseOver.toString(), JS_DIR + "/script.js");
 };
 // Append html, css file
 const AppendContent = async () => {
@@ -56,7 +54,7 @@ const AppendContent = async () => {
     }
   }
   appendHtml += await ejs.renderFile("./templates/common/end.ejs");
-  writeToHtml(appendHtml);
+  writeToFile(appendHtml, "/index.html");
 };
 
 exports.MainHandler = async () => {
