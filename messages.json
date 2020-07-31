@@ -9,12 +9,12 @@
     "notify": "1",
     "mentions": null,
     "quote": null,
-    "message": "1",
+    "message": "abcxyz",
     "sendDttm": "1595229839658",
     "serverTime": "1595229840524",
-    "fromUid": "0",
+    "fromUid": "29192192",
     "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
+    "dName": "tài",
     "localDttm": 1595229841400,
     "properties": {
       "color": 0,
@@ -30,7 +30,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["1", ""],
+    "z_parsedTokens": [
+      "1",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -52,7 +55,7 @@
     "notify": "1",
     "mentions": null,
     "quote": null,
-    "message": "2",
+    "message": "iquwoeyiwqyewq",
     "sendDttm": "1595229840525",
     "serverTime": "1595229840934",
     "fromUid": "0",
@@ -73,7 +76,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["2", ""],
+    "z_parsedTokens": [
+      "2",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -116,7 +122,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["3", ""],
+    "z_parsedTokens": [
+      "3",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -139,16 +148,16 @@
     "mentions": null,
     "quote": null,
     "message": {
-      "id": 37471,
+      "id": 28502,
       "catId": 11351,
       "type": 7,
       "extInfo": null
     },
     "sendDttm": "1595229846733",
     "serverTime": "1595229847649",
-    "fromUid": "0",
+    "fromUid": "2423424324",
     "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
+    "dName": "toàn",
     "localDttm": 1595229848455,
     "properties": null,
     "ttl": 0,
@@ -173,7 +182,7 @@
     "quote": null,
     "message": {
       "id": 28502,
-      "catId": 10790,
+      "catId": 11351,
       "type": 7,
       "extInfo": null
     },
@@ -458,7 +467,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 3", ""],
+    "z_parsedTokens": [
+      "test_1KB - 3",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -505,7 +517,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 2", ""],
+    "z_parsedTokens": [
+      "test_1KB - 2",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -539,9 +554,9 @@
     },
     "sendDttm": "1595229898709",
     "serverTime": "1595229898709",
-    "fromUid": "0",
+    "fromUid": "18291829812",
     "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
+    "dName": "hoàng",
     "localDttm": 1595229900271,
     "properties": null,
     "ttl": 0,
@@ -552,7 +567,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 4", ""],
+    "z_parsedTokens": [
+      "test_1KB - 4",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -599,7 +617,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 5", ""],
+    "z_parsedTokens": [
+      "test_1KB - 5",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -633,9 +654,9 @@
     },
     "sendDttm": "1595229898750",
     "serverTime": "1595229898750",
-    "fromUid": "0",
+    "fromUid": "265126120",
     "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
+    "dName": "toàn",
     "localDttm": 1595229899966,
     "properties": null,
     "ttl": 0,
@@ -646,7 +667,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["test_1KB - 1", ""],
+    "z_parsedTokens": [
+      "test_1KB - 1",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -725,7 +749,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["Hải Phạm", ""],
+    "z_parsedTokens": [
+      "Hải Phạm",
+      ""
+    ],
     "isLastMsg": false
   },
   {
@@ -762,120 +789,11 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["Toan Nguyen", ""],
+    "z_parsedTokens": [
+      "Toan Nguyen",
+      ""
+    ],
     "isLastMsg": false
-  },
-  {
-    "actionId": "1653993690634",
-    "msgId": "1983622893065",
-    "zglobalMsgId": "1983622893065",
-    "cliMsgId": "1595229937226",
-    "msgType": 6,
-    "status": 2,
-    "notify": "1",
-    "mentions": null,
-    "quote": null,
-    "message": {
-      "title": "https://vnexpress.net/bac-trung-bo-trai-qua-70-ngay-nang-nong-4131040.html",
-      "description": "Từ tháng 5 đến nay, các tỉnh Nghệ An, Hà Tĩnh, Quảng Bình, Quảng Trị trải qua 60-70 ngày nắng nóng, nhiệt độ cao hơn trung bình nhiều năm 1-1,5 độ C.",
-      "href": "https://vnexpress.net/bac-trung-bo-trai-qua-70-ngay-nang-nong-4131040.html",
-      "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly9pMS12bmV4cHJlc3Mudm5lY2RuLm5ldC8yMDIwLzA3LzE1L25hbmctbm9uZy1zZXR0b3AtMDFfMTU5NDgxNzg2OF8xMjAweDAuanBnP3c9MCZoPTAmcT0xMDAmZHByPTImZml0PWNyb3Amcz0wOUE0OWxCbl9maTFyM0dGbThEZkpB",
-      "childnumber": 0,
-      "action": "recommened.link",
-      "params": "{\"streamUrl\":\"\",\"mediaTitle\":\"Bắc Trung Bộ trải qua 70 ngày nắng nóng - VnExpress \",\"stream_icon\":\"\",\"src\":\"vnexpress.net\",\"artist\":\"\",\"type\":0}",
-      "type": ""
-    },
-    "sendDttm": "1595229937238",
-    "serverTime": "1595229938150",
-    "fromUid": "0",
-    "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
-    "localDttm": 1595229938964,
-    "properties": null,
-    "ttl": 0,
-    "refMessageId": null,
-    "src": 1,
-    "syncFromMobile": false,
-    "topOut": "0",
-    "topOutTimeOut": "0",
-    "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      {
-        "type": 2,
-        "value": {
-          "prefix": "https://",
-          "url": "vnexpress.net/bac-trung-bo-trai-qua-70-ngay-nang-nong-4131040.html"
-        },
-        "pos": 0
-      },
-      ""
-    ],
-    "isLastMsg": false,
-    "reacts": {
-      "idTo": "",
-      "msgType": "chat.reaction",
-      "rClientMsgId": 0,
-      "rMsgId": 1983622893065,
-      "rMsgType": 0,
-      "currentIcon": 3,
-      "reactions": null
-    }
-  },
-  {
-    "actionId": "1653994017053",
-    "msgId": "1983623053701",
-    "zglobalMsgId": "1983623053701",
-    "cliMsgId": "1595229943125",
-    "msgType": 6,
-    "status": 2,
-    "notify": "1",
-    "mentions": null,
-    "quote": null,
-    "message": {
-      "title": "https://vnexpress.net/my-chiem-gan-1-4-ca-tu-vong-do-ncov-toan-cau-4132995.html",
-      "description": "Mỹ hiện ghi nhận hơn 143.000 người chết do nCoV, chiếm gần 1/4 tổng ca tử vong toàn cầu và tiếp tục là vùng dịch lớn nhất thế giới.",
-      "href": "https://vnexpress.net/my-chiem-gan-1-4-ca-tu-vong-do-ncov-toan-cau-4132995.html",
-      "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly9pMS12bmV4cHJlc3Mudm5lY2RuLm5ldC8yMDIwLzA3LzIwLzIwMjAwNzE3MDAwMDAwOTBreW9kb25ld3MwMDB2aS0yMzQ1LTkwNDAtMTU5NTIxNjkyNF8xMjAweDAuanBnP3c9MCZoPTAmcT0xMDAmZHByPTImZml0PWNyb3Amcz1SdW9ZVFFiY3l2WXRxLXdMS0ZueEx3",
-      "childnumber": 0,
-      "action": "recommened.link",
-      "params": "{\"streamUrl\":\"\",\"mediaTitle\":\"Mỹ chiếm gần 1\\/4 ca tử vong do nCoV toàn cầu - VnExpress \",\"stream_icon\":\"\",\"src\":\"vnexpress.net\",\"artist\":\"\",\"type\":0}",
-      "type": ""
-    },
-    "sendDttm": "1595229943138",
-    "serverTime": "1595229944039",
-    "fromUid": "0",
-    "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
-    "localDttm": 1595229944856,
-    "properties": null,
-    "ttl": 0,
-    "refMessageId": null,
-    "src": 1,
-    "syncFromMobile": false,
-    "topOut": "0",
-    "topOutTimeOut": "0",
-    "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      {
-        "type": 2,
-        "value": {
-          "prefix": "https://",
-          "url": "vnexpress.net/my-chiem-gan-1-4-ca-tu-vong-do-ncov-toan-cau-4132995.html"
-        },
-        "pos": 0
-      },
-      ""
-    ],
-    "isLastMsg": false,
-    "reacts": {
-      "idTo": "",
-      "msgType": "chat.reaction",
-      "rClientMsgId": 0,
-      "rMsgId": 1983623053701,
-      "rMsgType": 0,
-      "currentIcon": 3,
-      "reactions": null
-    }
   },
   {
     "actionId": "1653995849072",
@@ -908,7 +826,10 @@
     "topOut": "0",
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
-    "z_parsedTokens": ["recall msg", ""],
+    "z_parsedTokens": [
+      "recall msg",
+      ""
+    ],
     "isLastMsg": false,
     "reacts": {
       "idTo": "",
@@ -990,7 +911,10 @@
     "topOutTimeOut": "0",
     "topOutImprTimeOut": "0",
     "folderPath": "",
-    "z_parsedTokens": ["sample files.zip", ""],
+    "z_parsedTokens": [
+      "sample files.zip",
+      ""
+    ],
     "isLastMsg": true,
     "reacts": {
       "idTo": "",
@@ -1001,5 +925,71 @@
       "currentIcon": 3,
       "reactions": null
     }
+  },
+  {
+    "message": {
+      "href": "https://f1.voice.talk.zdn.vn/9166407012145037584/48a243256db985e7dca8.amr",
+      "title": ""
+    },
+    "msgId": "1996682306543",
+    "msgType": 3,
+    "dName": "Son",
+    "fromUid": "23232323"
+  },
+  {
+    "message": {
+      "href": "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4",
+      "title": "file_example_MP4.mp4"
+    },
+    "msgType": 19,
+    "dName": "Đạt",
+    "fromUid": "222223232323"
+  },
+  {
+    "msgType": 6,
+    "dName": "Thi",
+    "fromUid": "878675222223232323",
+    "message": {
+      "action": "recommened.link",
+      "childnumber": 0,
+      "description": "ĐỨC PHÚC OFFICIAL",
+      "href": "https://www.youtube.com/watch?v=oiikgEzTotg&list=RD2PNuM65OL1I&index=7",
+      "params": {
+        "streamUrl": "",
+        "mediaTitle": "TA CÒN YÊU NHAU - OFFICIAL MV STORY | ĐỨC PHÚC"
+      },
+      "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly96bmV3cy1waG90by1mYmNyYXdsZXIuemFkbi52bi93NzIwL1VwbG9hZGVkL29maF9jZ216c3Rnay8yMDIwXzA3XzMwLzExNjcxNjIwN182NDk0OTk4MTIzMjA4MTJfMzQwMjAzNzM4NzY0ODYyNzc2MV9uX21td2kuanBn",
+      "title": "https://www.youtube.com/watch?v=oiikgEzTotg&list=RD2PNuM65OL1I&index=7",
+      "type": "",
+      "msgId": "2001433349159452"
+    }
+  },
+  {
+    "message": {
+      "href": "https://zalo-file-doc5.zdn.vn/d550ee4d02f5eeabb7e4/1502577436344094971",
+      "title": "textfile.txt.txt"
+    },
+    "msgType": 19,
+    "dName": "abac xyz",
+    "fromUid": "3333222223232323"
+  },
+  {
+    "msgType": 6,
+    "dName": "Thi",
+    "fromUid": "878675222223232323",
+    "message": {
+      "action": "recommened.link",
+      "description": "Diễn biến Covid-19 ở Đà Nẵng: Đuổi theo nhóm người bỏ chạy lúc rạng sáng, Công an quận Tân Phú tạm giữ 11 công dân Trung Quốc nghi nhập cảnh trái phép.",
+      "childnumber": 0,
+      "href": "https://zingnews.vn/tphcm-phat-hien-them-11-nguoi-trung-quoc-nghi-nhap-canh-trai-phep-post1113305.html",
+      "params": {
+        "streamUrl": "",
+        "mediaTitle": "TA CÒN YÊU NHAU - OFFICIAL MV STORY | ĐỨC PHÚC"
+      },
+      "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly96bmV3cy1waG90by1mYmNyYXdsZXIuemFkbi52bi93NzIwL1VwbG9hZGVkL29maF9jZ216c3Rnay8yMDIwXzA3XzMwLzExNjcxNjIwN182NDk0OTk4MTIzMjA4MTJfMzQwMjAzNzM4NzY0ODYyNzc2MV9uX21td2kuanBn",
+      "type": "",
+      "title": "https://zingnews.vn/tphcm-phat-hien-them-11-nguoi-trung-quoc-nghi-nhap-canh-trai-phep-post1113305.html"
+    },
+    "msgId": "43412121"
   }
 ]
