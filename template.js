@@ -81,7 +81,6 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       height: dimensions.height,
       msgId,
     });
-
   }
   // Link type
   else if (msgType === 6) {

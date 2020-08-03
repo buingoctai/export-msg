@@ -173,7 +173,7 @@ const MAX_TEXT_LENGTH = 70;
 const TITLE_GROUP_CHAT = "Chat nhóm";
 
 module.exports = {
-  ROOT_EXPORT_PATH,
+  // ROOT_EXPORT_PATH,
   ROOT_FOLDER_NAME,
   JS_DIR,
   IMAGE_DIR,
