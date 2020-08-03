@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require('path');
 const { Transform } = require("stream");
 const crypto = require("crypto");
 
@@ -39,22 +40,21 @@ createRootExportPath = (path) => {
 exports.createRootExportPath = createRootExportPath;
 
 exports.createExportDataDir = () => {
-  fullExportPath = rootExportPath + ROOT_FOLDER_NAME;
-
+  fullExportPath = path.join(rootExportPath, ROOT_FOLDER_NAME);
   fs.mkdirSync(fullExportPath);
-  fs.mkdirSync(fullExportPath + JS_DIR);
-  fs.mkdirSync(fullExportPath + IMAGE_DIR);
-  fs.mkdirSync(fullExportPath + CSS_DIR);
-  fs.mkdirSync(fullExportPath + PHOTO_DIR);
-  fs.mkdirSync(fullExportPath + MP3_DIR);
-  fs.mkdirSync(fullExportPath + STICKER_DIR);
-  fs.mkdirSync(fullExportPath + GIF_DIR);
-  fs.mkdirSync(fullExportPath + MP4_DIR);
-  fs.mkdirSync(fullExportPath + FILE_DIR);
+  fs.mkdirSync(path.join(fullExportPath, JS_DIR));
+  fs.mkdirSync(path.join(fullExportPath, IMAGE_DIR));
+  fs.mkdirSync(path.join(fullExportPath, CSS_DIR));
+  fs.mkdirSync(path.join(fullExportPath, PHOTO_DIR));
+  fs.mkdirSync(path.join(fullExportPath, MP3_DIR));
+  fs.mkdirSync(path.join(fullExportPath, STICKER_DIR));
+  fs.mkdirSync(path.join(fullExportPath, GIF_DIR));
+  fs.mkdirSync(path.join(fullExportPath, MP4_DIR));
+  fs.mkdirSync(path.join(fullExportPath, FILE_DIR));
 };
 
-exports.writeToFile = (content, subPath) => {
-  let writeStream = fs.createWriteStream(fullExportPath + subPath, {
+exports.writeToFile = (content, subDir, file) => {
+  let writeStream = fs.createWriteStream(path.join(fullExportPath, subDir, file), {
     flags: "a",
   });
 
@@ -198,7 +198,7 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
           const index = genUniqueKey(url, subDir);
           downloadedResource[index] = { fileName, size }
           fs.writeFileSync(
-            fullExportPath + subDir + `/${fileName}`,
+            path.join(fullExportPath, subDir, fileName),
             data.read()
           );
           resolve({ updatedFileName: fileName, size: convertSizeOfFile(size, 0) });

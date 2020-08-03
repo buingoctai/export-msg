@@ -1,4 +1,5 @@
 const ejs = require("ejs");
+const path = require('path');
 const {
   detectFileName,
   downloadExternalResource,
@@ -31,7 +32,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     let fileName = detectFileName(url);
     const { updatedFileName, size } = await downloadExternalResource({ msgType, url, fileName });
     fileName = updatedFileName;
-    const urlLocal = PHOTO_DIR + "/" + fileName;
+    const urlLocal = path.join(PHOTO_DIR, fileName);
 
     return ejs.renderFile("./templates/msg-2.ejs", {
       url: urlLocal,
@@ -48,7 +49,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
 
     const { updatedFileName } = await downloadExternalResource({ msgType, url, fileName });
     fileName = updatedFileName;
-    const urlLocal = MP3_DIR + "/" + fileName;
+    const urlLocal = path.join(MP3_DIR, fileName);
 
     return ejs.renderFile("./templates/msg-3.ejs", {
       url: urlLocal,
@@ -69,19 +70,17 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       fileName,
     });
     fileName = updatedFileName;
-    const urlLocal = STICKER_DIR + "/" + fileName;
+    const urlLocal = path.join(STICKER_DIR, fileName);
 
-    const stringHtml = await ejs.renderFile("./templates/msg-4.ejs", {
+    const dimensions = sizeOf(path.join(fullExportPath, STICKER_DIR, fileName));
+    return stringHtml = await ejs.renderFile("./templates/msg-4.ejs", {
       url: urlLocal,
+      fileName,
+      dirValue: STICKER_DIR,
+      width: dimensions.width,
+      height: dimensions.height,
+      msgId,
     });
-    const dimensions = sizeOf(fullExportPath + "./" + STICKER_DIR + "/" + fileName);
-
-    return stringHtml
-      .replace("fileNameValue", fileName)
-      .replace("pathValue", fullExportPath)
-      .replace("widthValue", dimensions.width)
-      .replace("heightValue", dimensions.height)
-      .replace("dirValue", STICKER_DIR);
 
   }
   // Link type
@@ -115,8 +114,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       fileName,
     });
     fileName = updatedFileName;
-    const urlLocal = GIF_DIR + "/" + fileName;
-
+    const urlLocal = path.join(GIF_DIR, fileName);
 
     return ejs.renderFile("./templates/msg-7.ejs", {
       fileName,
@@ -134,6 +132,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       msgType: 6,
       url: LOCATION_ICON,
       fileName: iconName,
+
     });
 
     return ejs.renderFile("./templates/msg-17.ejs", {
@@ -142,7 +141,8 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       desc: limitText(desc),
       lat,
       lo,
-      dir: IMAGE_DIR
+      dir: IMAGE_DIR,
+      imgWrap: 'image'
     });
   }
   // File type
@@ -150,7 +150,6 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     const { title = "", href = "", thumb = "" } = message;
     let fileNameFile = title;
     let fileNameImg = "";
-
 
     const { updatedFileName, size } = await downloadExternalResource({
       msgType,
@@ -160,27 +159,28 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     fileNameFile = updatedFileName;
 
     if (thumb) {
-      fileName = detectFileName(thumb);
-      downloadExternalResource({
+      const fileName = detectFileName(thumb);
+      const { updatedFileName } = await downloadExternalResource({
         msgType: 6,
         url: thumb,
         fileName,
       });
+      fileNameImg = updatedFileName;
     } else {
       const { extension, url } = determinateThumb(title);
       fileNameImg = `${extension}.svg`;
       const { updatedFileName } = await downloadExternalResource({ msgType: 6, url, fileName: fileNameImg });
       fileNameImg = updatedFileName;
     }
-    const urlLocal = FILE_DIR + "/" + fileNameFile;
-
+    const urlLocal = path.join(FILE_DIR, fileNameFile);
 
     return ejs.renderFile("./templates/msg-19.ejs", {
       url: urlLocal,
       title: limitText(title),
       size,
       fileName: fileNameImg,
-      dir: IMAGE_DIR
+      dir: IMAGE_DIR,
+      imgWrap: 'image'
     });
   }
   // Default

@@ -46,6 +46,52 @@
     }
   },
   {
+    "actionId": "1653995849072",
+    "msgId": "1983623961893",
+    "zglobalMsgId": "1983623961893",
+    "cliMsgId": "1595229976553",
+    "msgType": 20,
+    "status": 2,
+    "notify": "1",
+    "mentions": null,
+    "quote": null,
+    "message": "recall msg",
+    "sendDttm": "1595229976566",
+    "serverTime": "1595229977445",
+    "fromUid": "0",
+    "toUid": "g5979429457875072506",
+    "dName": "huỳnh",
+    "localDttm": 1595229978298,
+    "properties": {
+      "color": 0,
+      "size": 0,
+      "type": 0,
+      "subType": 0,
+      "ext": "{\"shouldParseLinkOrContact\":0}"
+    },
+    "ttl": 0,
+    "refMessageId": null,
+    "src": 1,
+    "syncFromMobile": false,
+    "topOut": "0",
+    "topOutTimeOut": "0",
+    "topOutImprTimeOut": "0",
+    "z_parsedTokens": [
+      "recall msg",
+      ""
+    ],
+    "isLastMsg": false,
+    "reacts": {
+      "idTo": "",
+      "msgType": "chat.reaction",
+      "rClientMsgId": 0,
+      "rMsgId": 1983623961893,
+      "rMsgType": 0,
+      "currentIcon": 3,
+      "reactions": null
+    }
+  },
+  {
     "actionId": "1653988365915",
     "msgId": "1983620256046",
     "zglobalMsgId": "1983620256046",
@@ -148,7 +194,7 @@
     "mentions": null,
     "quote": null,
     "message": {
-      "id": 28502,
+      "id": 34840,
       "catId": 11351,
       "type": 7,
       "extInfo": null
@@ -583,56 +629,6 @@
     }
   },
   {
-    "actionId": "1653991531627",
-    "msgId": "1983621820941",
-    "zglobalMsgId": "1983621820941",
-    "cliMsgId": "1595229896670",
-    "msgType": 19,
-    "status": 2,
-    "notify": "1",
-    "mentions": null,
-    "quote": null,
-    "message": {
-      "title": "test_1KB - 5",
-      "description": "",
-      "href": "https://f10-group-zf.zdn.vn/d3c4fdbb4005ac5bf514/6021938731089305234",
-      "thumb": "",
-      "childnumber": 0,
-      "action": "",
-      "params": "{\"fileSize\":\"1024\", \"checksum\":\"0f343b0931126a20f133d67c2b018a3b\", \"checksumSha\":\"null\", \"fileExt\":\"\", \"fdata\":\"\", \"fType\":1}",
-      "type": ""
-    },
-    "sendDttm": "1595229898735",
-    "serverTime": "1595229898735",
-    "fromUid": "0",
-    "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
-    "localDttm": 1595229900319,
-    "properties": null,
-    "ttl": 0,
-    "refMessageId": null,
-    "src": 1,
-    "syncFromMobile": false,
-    "topOut": "0",
-    "topOutTimeOut": "0",
-    "topOutImprTimeOut": "0",
-    "folderPath": "",
-    "z_parsedTokens": [
-      "test_1KB - 5",
-      ""
-    ],
-    "isLastMsg": false,
-    "reacts": {
-      "idTo": "",
-      "msgType": "chat.reaction",
-      "rClientMsgId": 0,
-      "rMsgId": 1983621820941,
-      "rMsgType": 0,
-      "currentIcon": 3,
-      "reactions": null
-    }
-  },
-  {
     "actionId": "1653991531412",
     "msgId": "1983621820894",
     "zglobalMsgId": "1983621820894",
@@ -796,52 +792,6 @@
     "isLastMsg": false
   },
   {
-    "actionId": "1653995849072",
-    "msgId": "1983623961893",
-    "zglobalMsgId": "1983623961893",
-    "cliMsgId": "1595229976553",
-    "msgType": 20,
-    "status": 2,
-    "notify": "1",
-    "mentions": null,
-    "quote": null,
-    "message": "recall msg",
-    "sendDttm": "1595229976566",
-    "serverTime": "1595229977445",
-    "fromUid": "0",
-    "toUid": "g5979429457875072506",
-    "dName": "huỳnh",
-    "localDttm": 1595229978298,
-    "properties": {
-      "color": 0,
-      "size": 0,
-      "type": 0,
-      "subType": 0,
-      "ext": "{\"shouldParseLinkOrContact\":0}"
-    },
-    "ttl": 0,
-    "refMessageId": null,
-    "src": 1,
-    "syncFromMobile": false,
-    "topOut": "0",
-    "topOutTimeOut": "0",
-    "topOutImprTimeOut": "0",
-    "z_parsedTokens": [
-      "recall msg",
-      ""
-    ],
-    "isLastMsg": false,
-    "reacts": {
-      "idTo": "",
-      "msgType": "chat.reaction",
-      "rClientMsgId": 0,
-      "rMsgId": 1983623961893,
-      "rMsgType": 0,
-      "currentIcon": 3,
-      "reactions": null
-    }
-  },
-  {
     "actionId": "1653997425421",
     "msgId": "1983624735130",
     "zglobalMsgId": "1983624735130",
@@ -960,9 +910,9 @@
       },
       "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly96bmV3cy1waG90by1mYmNyYXdsZXIuemFkbi52bi93NzIwL1VwbG9hZGVkL29maF9jZ216c3Rnay8yMDIwXzA3XzMwLzExNjcxNjIwN182NDk0OTk4MTIzMjA4MTJfMzQwMjAzNzM4NzY0ODYyNzc2MV9uX21td2kuanBn",
       "title": "https://www.youtube.com/watch?v=oiikgEzTotg&list=RD2PNuM65OL1I&index=7",
-      "type": "",
-      "msgId": "2001433349159452"
-    }
+      "type": ""
+    },
+    "msgId": "2001433349159452"
   },
   {
     "message": {
@@ -986,7 +936,7 @@
         "streamUrl": "",
         "mediaTitle": "TA CÒN YÊU NHAU - OFFICIAL MV STORY | ĐỨC PHÚC"
       },
-      "thumb": "http://link.photo.talk.zdn.vn/photolinkv2/720/aHR0cHM6Ly96bmV3cy1waG90by1mYmNyYXdsZXIuemFkbi52bi93NzIwL1VwbG9hZGVkL29maF9jZ216c3Rnay8yMDIwXzA3XzMwLzExNjcxNjIwN182NDk0OTk4MTIzMjA4MTJfMzQwMjAzNzM4NzY0ODYyNzc2MV9uX21td2kuanBn",
+      "thumb": "https://images.unsplash.com/photo-1510505678115-f2a7ae4cfea9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=684&q=80",
       "type": "",
       "title": "https://zingnews.vn/tphcm-phat-hien-them-11-nguoi-trung-quoc-nghi-nhap-canh-trai-phep-post1113305.html"
     },
