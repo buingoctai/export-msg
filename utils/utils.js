@@ -1,6 +1,5 @@
 const path = require("path");
 const fs = require("fs");
-const path = require('path');
 const { Transform } = require("stream");
 const crypto = require("crypto");
 
@@ -26,27 +25,36 @@ const {
 
 
 createRootExportPath = (path) => {
-  const newPath = path;
-
-  rootExportPath = newPath;
-  return fs.mkdirSync(newPath, { recursive: true });
+  rootExportPath = path;
+  return fs.mkdirSync(path, { recursive: true });
 };
 exports.createRootExportPath = createRootExportPath;
 
 exports.createExportDataDir = () => {
-  fullExportPath = path.join(rootExportPath, ROOT_FOLDER_NAME);
   const currentTime = new Date();
   const day = currentTime.getDate();
-  const month = currentTime.getMonth() - 1;
+  const month = currentTime.getMonth();
   const hour = currentTime.getHours();
   const minute = currentTime.getMinutes();
   const second = currentTime.getSeconds();
   const timeDir = "_" + month + "_" + day + "_" + hour + "_" + minute + "_" + second;
   fullExportPath = path.join(rootExportPath, ROOT_FOLDER_NAME + timeDir);
+
+  fs.mkdirSync(fullExportPath);
+  fs.mkdirSync(path.join(fullExportPath, JS_DIR));
+  fs.mkdirSync(path.join(fullExportPath, IMAGE_DIR));
+  fs.mkdirSync(path.join(fullExportPath, CSS_DIR));
+  fs.mkdirSync(path.join(fullExportPath, PHOTO_DIR));
+  fs.mkdirSync(path.join(fullExportPath, MP3_DIR));
+  fs.mkdirSync(path.join(fullExportPath, STICKER_DIR));
+  fs.mkdirSync(path.join(fullExportPath, GIF_DIR));
+  fs.mkdirSync(path.join(fullExportPath, MP4_DIR));
+  fs.mkdirSync(path.join(fullExportPath, FILE_DIR));
 };
 
 exports.writeToFile = (content, subDir, file) => {
-  let writeStream = fs.createWriteStream(path.join(fullExportPath, subDir, file), {
+  const url = subDir ? path.join(fullExportPath, subDir, file) : path.join(fullExportPath, file)
+  let writeStream = fs.createWriteStream(url, {
     flags: "a",
   });
 
