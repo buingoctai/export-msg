@@ -16,7 +16,7 @@ function onMouseOver(node) {
     displayList[node.id] = true;
     const id = setInterval(() => {
       node.style.backgroundPosition = `${(i = i - 130)}px 0px`;
-    }, 16);
+    }, 150);
     setTimeout(() => {
       node.style.backgroundPosition = "0px 0px";
       displayList[node.id] = false;
