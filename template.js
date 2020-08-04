@@ -4,7 +4,6 @@ const {
   detectFileName,
   downloadExternalResource,
   determinateThumb,
-  limitText,
 } = require("./utils/utils");
 const {
   STICKER_DOWNLOAD_URL,
@@ -23,7 +22,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
   // Text type
   if (msgType === 1) {
     return ejs.renderFile("./templates/msg-1.ejs", {
-      message: limitText(message),
+      message,
     });
   }
   // Photo type
@@ -37,7 +36,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     return ejs.renderFile("./templates/msg-2.ejs", {
       url: urlLocal,
       fileName,
-      title: limitText(title),
+      title,
       size,
       dir: PHOTO_DIR
     });
@@ -97,8 +96,8 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     return ejs.renderFile("./templates/msg-6.ejs", {
       fileName,
       url: href,
-      title: limitText(title),
-      description: limitText(description),
+      title: title,
+      description: description,
       dir: IMAGE_DIR
     });
   }
@@ -137,11 +136,10 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
     return ejs.renderFile("./templates/msg-17.ejs", {
       fileName: iconName,
       url: urlGgMap,
-      desc: limitText(desc),
+      desc,
       lat,
       lo,
       dir: IMAGE_DIR,
-      imgWrap: 'image'
     });
   }
   // File type
@@ -175,11 +173,12 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
 
     return ejs.renderFile("./templates/msg-19.ejs", {
       url: urlLocal,
-      title: limitText(title),
+      title,
       size,
       fileName: fileNameImg,
       dir: IMAGE_DIR,
-      imgWrap: 'image'
+      wrapImgClass: thumb ? '' : 'wrap_icon_file',
+      imgClass: thumb ? 'thumb' : 'icon_file'
     });
   }
   // Default

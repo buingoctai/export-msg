@@ -33,7 +33,7 @@ exports.createRootExportPath = createRootExportPath;
 exports.createExportDataDir = () => {
   const currentTime = new Date();
   const day = currentTime.getDate();
-  const month = currentTime.getMonth();
+  const month = currentTime.getMonth() + 1;
   const hour = currentTime.getHours();
   const minute = currentTime.getMinutes();
   const second = currentTime.getSeconds();

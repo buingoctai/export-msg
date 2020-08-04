@@ -20,7 +20,6 @@ const INITIAL_CSS = `.container {
   }
   body{
     margin:0px;
-    
   }
   div{
     font-family: "Segoe UI", "SegoeuiPc", "San Francisco", "Helvetica Neue", "Helvetica", "Lucida Grande", "Roboto", "Ubuntu", "Tahoma", Microsoft Sans Serif, Tahoma, Arial, sans-serif;
@@ -39,7 +38,7 @@ const INITIAL_CSS = `.container {
   }
   .page_body{
     padding-top: 64px;
-    width: 520px;
+    width:600px;
     margin: 0 auto;
   }
   .history{
@@ -110,38 +109,42 @@ const INITIAL_CSS = `.container {
   .default .media_wrap {
     padding-bottom: 5px;
   }
-  .wrapThumb{
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    position: relative;
+  .wrap_icon_file{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
   }
+ 
   .media_wrap .thumb {
-    position:absolute;
-    left: -100%;
-    right: -100%;
-    top: -100%;
-    bottom: -100%;
-    margin: auto;
-    min-height: 100%;
-    min-width: 100%;
+    object-fit: none;
+    object-position: center;
+    height: 90px;
+    width: 90px;
   }
-  .media_wrap .image{
-    max-width:120px;
-    max-height:80px;
+
+  .media_wrap .icon_file{
+    height: 90px;
+  }
+  .media_wrap .gif{
+    max-width:150px;
+    max-height:100px;
+  }
+  .media_wrap .icon_location{
+    wwidth: 90px;
+    height: 90px;
   }
   .arrangedFlex{
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 10px;
   }
   .arrangedFlex .infor{
     display: flex;
     flex-direction: column;
   }
   .arrangedFlex .infor > * {
-    padding: 10px 10px 
+    padding: 5px 10px 
   }
   .arrangedFlex .infor .title{
     font-size: 14px;
