@@ -29,6 +29,7 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
   else if (msgType === 2) {
     const { normalUrl: url = "", title = "" } = message;
     let fileName = detectFileName(url);
+
     const { updatedFileName, size } = await downloadExternalResource({ msgType, url, fileName });
     fileName = updatedFileName;
     const urlLocal = path.join(PHOTO_DIR, fileName);
@@ -56,19 +57,41 @@ exports.htmlTemplate = async ({ msgType, msgId, message }) => {
       dir: MP3_DIR
     });
   }
+
   // Sticker type
   else if (msgType === 4) {
+    const stickerStart = new Date();
+    console.log("stickerStart", stickerStart.getMinutes(), stickerStart.getSeconds(), stickerStart.getMilliseconds());
+
     const sizeOf = require("image-size");
     const { id } = message;
     const url = STICKER_DOWNLOAD_URL.replace("IdValue", id);
     let fileName = `${msgId}.png`;
 
-    const { updatedFileName } = await downloadExternalResource({
-      msgType,
-      url,
-      fileName,
-    });
-    fileName = updatedFileName;
+    const downloadStart = new Date();
+    console.log("downloadStart", downloadStart.getMinutes(), downloadStart.getSeconds(), downloadStart.getMilliseconds());
+    try {
+      const { updatedFileName } = await downloadExternalResource({
+        msgType,
+        url,
+        fileName,
+      });
+      fileName = updatedFileName;
+    }
+    catch (err) {
+      return "";
+    }
+
+    // const { updatedFileName } = await downloadExternalResource({
+    //   msgType,
+    //   url,
+    //   fileName,
+    // });
+    const downloadEnd = new Date();
+    console.log("downloadEnd", downloadEnd.getMinutes(), downloadEnd.getSeconds(), downloadEnd.getMilliseconds());
+
+    // fileName = updatedFileName;
+
     const urlLocal = path.join(STICKER_DIR, fileName);
 
     const dimensions = sizeOf(path.join(fullExportPath, STICKER_DIR, fileName));

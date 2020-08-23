@@ -26,6 +26,8 @@ const initialContent = async () => {
 // Append html, css file
 const AppendContent = async () => {
   let appendHtml = "";
+  const startTime = new Date();
+  console.log("startTime", startTime.getMinutes(), startTime.getSeconds(), startTime.getMilliseconds());
 
   for (let i = 0; i < messages.length; i++) {
     const { dName, localDttm, fromUid } = messages[i];
@@ -54,8 +56,18 @@ const AppendContent = async () => {
       appendHtml += wrapInitMsg + htmlString + wrapEndMsg;
     }
   }
+
+  const stickerEnd = new Date();
+  console.log("stickerEnd", stickerEnd.getMinutes(), stickerEnd.getSeconds(), stickerEnd.getMilliseconds());
+
   appendHtml += await ejs.renderFile("./templates/common/end.ejs");
+
+  const betwwenTime = new Date();
+  console.log("betwwenTime", betwwenTime.getMinutes(), betwwenTime.getSeconds(), betwwenTime.getMilliseconds());
+
   writeToFile(appendHtml, "", "/index.html");
+  const endTime = new Date();
+  console.log("endTime", endTime.getMinutes(), endTime.getSeconds(), endTime.getMilliseconds());
 };
 
 exports.MainHandler = async () => {

@@ -180,13 +180,14 @@ exports.downloadExternalResource = async ({ msgType, url, fileName }) => {
     default:
   }
 
-  return new Promise((resolve, __) => {
+  return new Promise((resolve, reject) => {
     const existResource = downloadedResource[genUniqueKey(url, subDir)];
     if (existResource) {
       const { fileName, size } = existResource;
       return resolve({ updatedFileName: fileName, size: convertSizeOfFile(size, 0) })
     }
 
+    reject('');
     protocol
       .request(url, function (response) {
         let data = new Transform();
